@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="MySQL 笔记"><meta name="keywords" content="技术"><meta name="author" content="birdkyle7918"><meta name="copyright" content="birdkyle7918"><meta name="google-site-verification" content="UYwraydo6Fj6rB7ioL-B_bRBzwq8SkrC9MF21wbMVKQ"><meta name="baidu-site-verification" content="code-DIR5DhCas7"><title>MySQL 笔记 | birdkyle7918</title><link rel="shortcut icon" href="https://raw.githubusercontent.com/birdkyle7918/img/main/fantasy.png"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="manifest" href="/manifest.json"><link rel="manifest" href="/manifest.json"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-7006371075588989',
+  enable_page_level_ads: 'true'
+});
+</script><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7d4125647ee5cb6c44b057b49d6818c6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-192131259-1', 'auto');
+ga('send', 'pageview');</script><meta name="google-site-verification" content="UA-192131259-1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="birdkyle7918" type="application/atom+xml">
+</head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="false"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E7%9A%84%E5%86%85%E9%83%A8%E6%9E%B6%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">MySQL 的内部架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E7%9A%84%E6%97%A5%E5%BF%97"><span class="toc-number">2.</span> <span class="toc-text">MySQL 的日志</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#error-log"><span class="toc-number">2.1.</span> <span class="toc-text">error log</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bin-log"><span class="toc-number">2.2.</span> <span class="toc-text">bin log</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#relay-log"><span class="toc-number">2.3.</span> <span class="toc-text">relay log</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slow-query-log"><span class="toc-number">2.4.</span> <span class="toc-text">slow query log</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redo-log"><span class="toc-number">2.5.</span> <span class="toc-text">redo log</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redo-log-%E5%92%8C-bin-log-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.6.</span> <span class="toc-text">redo log 和 bin log 的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E7%9A%84%E7%BC%93%E5%86%B2%E6%B1%A0"><span class="toc-number">3.</span> <span class="toc-text">MySQL 的缓冲池</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">3.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redo-log-%E7%BC%93%E5%AD%98"><span class="toc-number">3.2.</span> <span class="toc-text">redo log 缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CheckPoint-%E6%8A%80%E6%9C%AF"><span class="toc-number">3.3.</span> <span class="toc-text">CheckPoint 技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E5%92%8C%E9%94%81%E6%9C%BA%E5%88%B6"><span class="toc-number">4.</span> <span class="toc-text">MySQL 事务隔离级别和锁机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E4%BA%AB%E9%94%81-Share-Lock%EF%BC%88S%E9%94%81%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">共享锁 Share Lock（S锁）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%AE%83%E9%94%81-Exclusive-Lock%EF%BC%88X%E9%94%81%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">排它锁 Exclusive Lock（X锁）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%89%88%E6%9C%AC%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6%EF%BC%88Multiversion-concurrency-control%EF%BC%8C%E7%AE%80%E7%A7%B0-MVCC-%EF%BC%89"><span class="toc-number">4.3.</span> <span class="toc-text">多版本并发控制（Multiversion concurrency control，简称 MVCC ）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVCC-%E7%9A%84%E5%8E%9F%E7%90%86%E7%BB%86%E8%8A%82"><span class="toc-number">4.4.</span> <span class="toc-text">MVCC 的原理细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E9%94%81%E7%9A%84%E6%80%BB%E7%BB%93"><span class="toc-number">4.5.</span> <span class="toc-text">对锁的总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E9%94%81%E7%9A%84-3-%E4%B8%AD%E7%AE%97%E6%B3%95"><span class="toc-number">4.6.</span> <span class="toc-text">行锁的 3 中算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E7%9A%84%E7%B4%A2%E5%BC%95"><span class="toc-number">5.</span> <span class="toc-text">MySQL 的索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E8%A6%81%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">5.1.</span> <span class="toc-text">不要建立索引的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E8%AF%A5%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">5.2.</span> <span class="toc-text">应该建立索引的情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E7%9A%84%E5%88%86%E5%8C%BA"><span class="toc-number">6.</span> <span class="toc-text">MySQL 的分区</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-1"><span class="toc-number">6.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Range-%E5%88%86%E5%8C%BA"><span class="toc-number">6.2.</span> <span class="toc-text">Range 分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#List-%E5%88%86%E5%8C%BA"><span class="toc-number">6.3.</span> <span class="toc-text">List 分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hash-%E5%88%86%E5%8C%BA"><span class="toc-number">6.4.</span> <span class="toc-text">Hash 分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Key-%E5%88%86%E5%8C%BA"><span class="toc-number">6.5.</span> <span class="toc-text">Key 分区</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%85%A2-SQL-%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">7.</span> <span class="toc-text">慢 SQL 的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5-select-%E5%90%8E%E7%9A%84%E5%AD%97%E6%AE%B5"><span class="toc-number">7.1.</span> <span class="toc-text">检查 select 后的字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5-where-%E5%AD%90%E5%8F%A5"><span class="toc-number">7.2.</span> <span class="toc-text">检查 where 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5-order-by-%E5%AD%90%E5%8F%A5"><span class="toc-number">7.3.</span> <span class="toc-text">检查 order by 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E7%B4%A2%E5%BC%95"><span class="toc-number">7.4.</span> <span class="toc-text">检查索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">8.</span> <span class="toc-text">MySQL 常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%94%AE%E7%94%A8%E8%87%AA%E5%A2%9E%E8%BF%98%E6%98%AF-UUID-%EF%BC%9F"><span class="toc-number">8.1.</span> <span class="toc-text">主键用自增还是 UUID ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%94%AE%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E6%8E%A8%E8%8D%90%E6%9C%89%E4%B8%9A%E5%8A%A1%E5%90%AB%E4%B9%89%EF%BC%9F"><span class="toc-number">8.2.</span> <span class="toc-text">主键为什么不推荐有业务含义？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A7%E5%B8%81%E5%AD%97%E6%AE%B5%E7%94%A8%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%EF%BC%9F"><span class="toc-number">8.3.</span> <span class="toc-text">货币字段用什么类型？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#where-%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%EF%BC%9F"><span class="toc-number">8.4.</span> <span class="toc-text">where 的执行顺序是怎样的？</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://raw.githubusercontent.com/birdkyle7918/img/main/fantasy.png"></div><div class="author-info__name text-center">birdkyle7918</div><div class="author-info__description text-center">Born in 2000, Big fan of Jay Chou, Interested in composing music, Coding in Java, Learning in progress.</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">8</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">2</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://i.v2ex.co/p7DPQJSB.png)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">birdkyle7918</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/gallery">Gallery</a><a class="site-page" href="/tags">Tags</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">MySQL 笔记</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-03-04</time><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/03/04/MySQL%20%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/03/04/MySQL 笔记整理/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="MySQL-的内部架构"><a href="#MySQL-的内部架构" class="headerlink" title="MySQL 的内部架构"></a>MySQL 的内部架构</h2><img src="https://raw.githubusercontent.com/birdkyle7918/img/main/MySQL%20%E5%86%85%E9%83%A8%E6%9E%B6%E6%9E%84.png" style="zoom:50%;box-shadow: 3px 3px 10px 10px rgba(0,0,0,.15)" />
+
+<p>分析器：相当于编译功能。</p>
+<p>优化器：对执行过程进行优化，决定走索引或者不走索引之类的。</p>
+<h2 id="MySQL-的日志"><a href="#MySQL-的日志" class="headerlink" title="MySQL 的日志"></a>MySQL 的日志</h2><h3 id="error-log"><a href="#error-log" class="headerlink" title="error log"></a>error log</h3><p>默认开启的日志，而且不能被关闭，记录了：服务器启动和关闭过程中的信息（未必是错误信息，如 MySQL 如何启动 InnoDB 的表空间文件的、如何初始化自己的存储引擎的等等）、服务器运行过程中的错误信息、事件调度器运行一个事件时产生的信息、在从服务器上启动服务器进程时产生的信息。</p>
+<h3 id="bin-log"><a href="#bin-log" class="headerlink" title="bin log"></a>bin log</h3><p>用于复制，在主从复制中，从库利用主库上的 bin log 进行脚本重播，从而实现主从同步。该日志内容可以认为就是执行过的 SQL 语句，这些语句可以再次执行。虽然开启该日志后对性能有所影响，但是影响不大，建议开启。该日志放置的位置在配置文件中有给出。</p>
+<h3 id="relay-log"><a href="#relay-log" class="headerlink" title="relay log"></a>relay log</h3><p>当要使用主从复制的时候，就要使用中继日志了，它是从 master 数据库上记录下来的二进制日志文件，再同步到自己的数据库上的中继日志文件，然后读取中继日志文件当中的内容来实现最终的同步。</p>
+<h3 id="slow-query-log"><a href="#slow-query-log" class="headerlink" title="slow query log"></a>slow query log</h3><p>该日志记录了执行时间超过阈值的 SQL 语句。该日志开启后对性能的影响不大，建议开启。</p>
+<h3 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h3><p>该日志是 InooDB 引擎特有的，日志的位置在 InnoDB 存储引擎的数据目录下。</p>
+<p>redo log 确保事务的持久性，防止在重启 MySQL 服务的时候，尚有脏页没写入磁盘。MySQL 根据 redo log 的内容进行重做，从而达到事务的持久性这个特性。</p>
+<p>该日志记录了事务在物理层面对磁盘的修改，该日志采用追加的方式，因此写日志的操作是磁盘上一小块区域内的顺序 I/O ，而不像随机 I/O 需要在磁盘的多个地方移动磁头。事务日志持久以后，内存中被修改的数据在后台可以慢慢的刷回到磁盘。目前大多数的存储引擎都是这样实现的，我们通常称之为预写式日志。</p>
+<p>如果数据的修改已经记录到事务日志并持久化，但数据本身还没有写回磁盘，此时系统崩溃，存储引擎在重启时能够自动恢复这部分修改的数据。具体的恢复方式则视存储引擎而定。</p>
+<h3 id="redo-log-和-bin-log-的区别"><a href="#redo-log-和-bin-log-的区别" class="headerlink" title="redo log 和 bin log 的区别"></a>redo log 和 bin log 的区别</h3><ol>
+<li>bin log 是逻辑日志，记录的是可引起表数据改变的 SQL 语句的二进制形式；而 redo log 是物理日志，记录的是磁盘在物理层面对页的修改。</li>
+<li>bin log 是在事务提交完成之后一次写入，而 redo log 是在事务进行中不断写入。</li>
+<li>bin log 可作为脚本重播，整库复制；而 redo log 主要保证异常宕机或断电后的数据完整性。</li>
+</ol>
+<h2 id="MySQL-的缓冲池"><a href="#MySQL-的缓冲池" class="headerlink" title="MySQL 的缓冲池"></a>MySQL 的缓冲池</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>缓冲池就是一块内存区域，用来弥补磁盘速度较慢对性能的影响。数据库中进行读取页操作时，首先会将磁盘中读到的页放在缓冲池中，下一次再读相同的页时，如果缓冲中命中那么就直接从缓冲中读取即可。</p>
+<p>页从缓存刷回磁盘并不是在每次页发生修改时发生，而是通过一种叫做 CheckPoint 的机制刷回磁盘。</p>
+<p>具体来看，缓冲池中的数据包括：</p>
+<ul>
+<li>索引页缓存</li>
+<li>数据页缓存</li>
+<li>redo log 缓存</li>
+<li>插入缓存</li>
+<li>自适应哈希索引</li>
+<li>锁信息</li>
+<li>数据字典信息</li>
+</ul>
+<p>其他几种缓冲都好理解，主要介绍一下 redo log 缓冲。</p>
+<h3 id="redo-log-缓存"><a href="#redo-log-缓存" class="headerlink" title="redo log 缓存"></a>redo log 缓存</h3><p>在下面 3 种情况下，会将 redo log 从缓存中刷回磁盘 (这里指的是将 redo log 日志本身持久化到磁盘)：</p>
+<ul>
+<li>Master Thread 每一秒执行一次刷回</li>
+<li>每个事务提交时刷回</li>
+<li>当 redo log 缓存的剩余空间小于一半时刷回</li>
+</ul>
+<h3 id="CheckPoint-技术"><a href="#CheckPoint-技术" class="headerlink" title="CheckPoint 技术"></a>CheckPoint 技术</h3><p>如果每次一个页发生了改变，就将新页刷回磁盘，那么这个性能开销比较大。同时，如果在刷回磁盘的过程中发生了宕机，那么数据就无法恢复了。为了避免丢失的问题，MySQL 采用了先写 redo log 日志，再修改数据页的策略。由于宕机而导致数据丢失时，通过 redo log 来完成数据恢复。</p>
+<p>当数据库发生宕机时，不需要重做所有的 redo log ，只需要对 CheckPoint 之后的日志进行恢复就行了，因为之前的页都已经刷回磁盘。</p>
+<p>此外，当缓冲池不够用时，根据 LRU 算法会抛弃最近最少使用的页，如果这个被抛弃的页是脏的，那么就刷回磁盘，修改 CheckPoint 。</p>
+<p>CheckPoint 无外乎是把缓存中的脏页刷回磁盘，不同之处在于每次刷回多少页，以及什么时候触发 CheckPoint 。</p>
+<p>CheckPoint 的两种类型：</p>
+<ul>
+<li>Sharp CheckPoint：发生在数据库关闭时将全部的脏页刷回磁盘，这是默认的。</li>
+<li>Fuzzy CheckPoint：只刷回一部分脏页。</li>
+</ul>
+<p>Fuzzy CheckPoint 又可以分为以下 4 种：</p>
+<ul>
+<li>Master Thread CheckPoint ：主线程每隔一段时间刷回一部分脏页，比如每隔 1 秒或 10 秒。</li>
+<li>Flush LRU List CheckPoint ：这个策略保证了 LRU 列表中需要有差不多 100 个空闲的页面，如果没有 100 个空闲的页面，那么会抛弃一些列表尾部的页面。如果被抛弃的页面是脏的，那么就要刷回磁盘。</li>
+<li>Async/Sync Flush CheckPoint ：这种策略表示，在 redo log 文件不可用的情况下，需要强制将一部分页面刷回磁盘，为了保证 redo log 的循环使用性。</li>
+<li>Dirty Page too much：表示脏页太多时，需要进行脏页刷回。总的来说还是为了保证缓冲池有足够多的可用的页。</li>
+</ul>
+<h2 id="MySQL-事务隔离级别和锁机制"><a href="#MySQL-事务隔离级别和锁机制" class="headerlink" title="MySQL 事务隔离级别和锁机制"></a>MySQL 事务隔离级别和锁机制</h2><p>脏读定义：读取到还未提交的数据。</p>
+<p>不可重复读的重点在于修改和删除，幻读的重点在于添加。</p>
+<table>
+<thead>
+<tr>
+<th align="center">隔离级别</th>
+<th align="center">脏读</th>
+<th align="center">不可重复读</th>
+<th align="center">幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Read Uncommitted</td>
+<td align="center">可能发生</td>
+<td align="center">可能发生</td>
+<td align="center">可能发生</td>
+</tr>
+<tr>
+<td align="center">Read Committed</td>
+<td align="center">不会发生</td>
+<td align="center">可能发生</td>
+<td align="center">可能发生</td>
+</tr>
+<tr>
+<td align="center">Repeatable Read</td>
+<td align="center">不会发生</td>
+<td align="center">不会发生</td>
+<td align="center">不会发生</td>
+</tr>
+<tr>
+<td align="center">Serializable</td>
+<td align="center">不会发生</td>
+<td align="center">不会发生</td>
+<td align="center">不会发生</td>
+</tr>
+</tbody></table>
+<h3 id="共享锁-Share-Lock（S锁）"><a href="#共享锁-Share-Lock（S锁）" class="headerlink" title="共享锁 Share Lock（S锁）"></a>共享锁 Share Lock（S锁）</h3><p>共享锁就是，对于同一数据，多个事务可以共享一把锁，都等访问到数据库，但是只能读，不能修改。</p>
+<h3 id="排它锁-Exclusive-Lock（X锁）"><a href="#排它锁-Exclusive-Lock（X锁）" class="headerlink" title="排它锁 Exclusive Lock（X锁）"></a>排它锁 Exclusive Lock（X锁）</h3><p>排它锁不能与别的锁共存，如果一个事务获取了一行的排它锁，其他事务就不能获得这一行的任何锁（也就不能读取或修改数据），获得了排它锁的事务才可以读取或者修改数据。</p>
+<h3 id="多版本并发控制（Multiversion-concurrency-control，简称-MVCC-）"><a href="#多版本并发控制（Multiversion-concurrency-control，简称-MVCC-）" class="headerlink" title="多版本并发控制（Multiversion concurrency control，简称 MVCC ）"></a>多版本并发控制（Multiversion concurrency control，简称 MVCC ）</h3><p>当一个修改数据的事务拿到了排它锁，并且修改了某一行数据，但是还没有 commit ，理论上其他的事务不可能拿到锁，也就不可能读取那一行的数据。但是，实际上其他的事务依然可以读取那一行的数据，而且读取的还是修改之前的数据。这是因为：MVCC 做了多版本的控制，另一个事务读取的实际上是一个快照。这种方式叫做一致性非锁定读取。</p>
+<p>MVCC 使用了一些手段，让读取数据的事务，在某些时候读取的是数据库的一个快照，而写入数据（或修改数据）的事务，在 commit 之前，对于其他读数据者是不可见的！</p>
+<p>MVCC 并发控制下的读事务一般使用时间戳或事务 ID 去标记版本。读和写相互隔离，不需要互斥。读和写并存的时候，写操作会根据目前数据库的状态，创建一个新版本，并发的读则依旧访问旧版本的数据。</p>
+<p>除了一致性非锁定读的 MVCC 处理方案外，我们还可以显式地让 MySQL 采用锁定读的方案：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 对行记录加上X锁</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">column</span> <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">for</span> update</span><br><span class="line"></span><br><span class="line"># 对行记录加上S锁</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">column</span> <span class="keyword">from</span> <span class="keyword">table</span> lock <span class="keyword">in</span> share mode;</span><br></pre></td></tr></table></figure>
+
+<h3 id="MVCC-的原理细节"><a href="#MVCC-的原理细节" class="headerlink" title="MVCC 的原理细节"></a>MVCC 的原理细节</h3><p>在 MySQL 建表的时候，每个表都有三个隐藏字段，其中两个字段与 MVCC 有关：</p>
+<ol>
+<li>数据行的版本号「DB_TRX_ID」</li>
+<li>删除版本号 「DB_ROLL_PT」</li>
+</ol>
+<p>MySQL 中的每个事务都会有一个唯一的全局 ID。</p>
+<ul>
+<li><p><strong>读取逻辑</strong></p>
+<p>  读取的数据行必须同时满足以下两个条件：</p>
+<ol>
+<li>只选择 DB_TRX_ID 小于等于当前事务 ID 的数据行，这样可以确保事务读取的行，要么是在事务开始前已经存在的，要么是事务自身插入或者修改过的。</li>
+<li>数据行的 DB_ROLL_PT 要么为 NULL，要么大于当前的事务 ID ，这可以确保事务能读取到在事务开始之前未被删除的行。</li>
+</ol>
+</li>
+<li><p><strong>插入逻辑</strong></p>
+<p>  在插入数据行的时候，会把字段 DB_TRX_ID 的值设置为执行插入操作的事务的 ID。</p>
+</li>
+<li><p><strong>删除逻辑</strong></p>
+<p>  在删除数据行的时候，并不是真正地删除，而是把 DB_ROLL_PT 字段的值置为执行删除操作的事务的 ID 。</p>
+</li>
+<li><p><strong>修改逻辑</strong></p>
+<p>  修改逻辑实际是插入逻辑和删除逻辑之和，先把删除的行的 DB_ROLL_PT 字段置为事务 ID ，然后添加一行，把 DB_TRX_ID 字段设置为事务 ID。</p>
+</li>
+</ul>
+<h3 id="对锁的总结"><a href="#对锁的总结" class="headerlink" title="对锁的总结"></a>对锁的总结</h3><p>首先，仅仅只是读取是完全不互斥的。然后，在一致性非锁定读下，即使另一个事务对某行加了 X 锁，另一个事务照常可以读取（读取快照），但是不能修改，修改操作会阻塞直到锁释放；在一致性锁定读下，如果一个事务对某行加了 X 锁，那么其他事务在读取或修改同一行时候都会阻塞。</p>
+<p>一句话：读和读<strong>完全</strong>不互斥，读和写<strong>可以</strong>不互斥，写和写<strong>一定</strong>互斥。</p>
+<h3 id="行锁的-3-中算法"><a href="#行锁的-3-中算法" class="headerlink" title="行锁的 3 中算法"></a>行锁的 3 中算法</h3><p>InnoDB 引擎有 3 种行锁的算法，分别是：</p>
+<ul>
+<li>Record Lock：单个行记录上的锁。</li>
+<li>Gap Lock：间隙锁，锁定一个范围，但是不包含记录本身。</li>
+<li>Next-Key Lock：前两者之和，既锁定记录本身，也锁定一个范围。</li>
+</ul>
+<p>Next-Key Lock 是前两种锁的结合，InnoDB 对于行的查询默认都是采用这种锁定算法。</p>
+<p>然而，当查询的索引含有唯一属性的时候，Next-Key Lock 会自动降级为 Record Lock ，也就是仅仅锁住索引的那一行，而不锁住范围。若唯一索引由多个列组成，而查询仅是查找多个唯一索引列中的其中一个，那么查询其实依然是 range 类型查询，而不是 point 类型查询，故这种情况依然使用 Next-Key Lock 进行锁定。</p>
+<h2 id="MySQL-的索引"><a href="#MySQL-的索引" class="headerlink" title="MySQL 的索引"></a>MySQL 的索引</h2><h3 id="不要建立索引的情况"><a href="#不要建立索引的情况" class="headerlink" title="不要建立索引的情况"></a>不要建立索引的情况</h3><ol>
+<li>索引列的数据区分度越高越好，所以区分度低的字段不推荐建立索引。因为索引是按照关键字值大小在 B+ 树上搜寻的，如果该字段的值大部分都相同，那么索引就会退化为线性查找，失去优势。比如自增主键 id 的区分度是最高的（因为每一行的 id 都不一样），所以在 MySQL 中尽量所有的 update 都使用主键 id 去更新。</li>
+<li>频繁更新的字段不应该建立索引。因为更新值的同时也要更新 B+ 树，这样会加重开销。</li>
+<li>where 条件用不到的字段不需要建立索引。</li>
+</ol>
+<h3 id="应该建立索引的情况"><a href="#应该建立索引的情况" class="headerlink" title="应该建立索引的情况"></a>应该建立索引的情况</h3><ol>
+<li>where 子句经常用到的字段。</li>
+<li>order by 子句经常用到的字段。</li>
+<li>关联查询时，外键字段应该建立索引。</li>
+</ol>
+<h2 id="MySQL-的分区"><a href="#MySQL-的分区" class="headerlink" title="MySQL 的分区"></a>MySQL 的分区</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>就访问数据库的应用而言，从逻辑上讲，只有一个表或一个索引，但是在物理上这个表或索引可能由很多个物理文件分区组成，每个分区都是独立的对象，可以独自处理，也可以作为一个更大的对象处理。</p>
+<p>MySQL 的分区只支持拆分行，并不支持拆分列，此外，MySQL 的每个分区中既保存了数据，也保存了索引，并不是说数据保存在分区，而索引统一管理。</p>
+<p>MySQL 在进行分区时，需要指定一个分区字段作为标准，然后根据该字段上不同的值以及事先定好的策略把行记录放入不同的分区中。注意：不论以何种方式建立的分区，分区列必须是唯一索引的一个组成部分，否则就无法分区。</p>
+<p>MySQL 的分区类型有：</p>
+<ul>
+<li>Range 分区：行数据基于一个给定的连续区间的列值被放入分区。</li>
+<li>List 分区：和 Range 分区相似，只不过 List 分区面向的是离散的值。</li>
+<li>Hash 分区：根据自定义的表达式的返回值来进行分区，返回值不能为负数。</li>
+<li>Key 分区：根据 MySQL 数据库提供的哈希函数来分区。</li>
+</ul>
+<p><strong>分区的好处</strong>：</p>
+<ul>
+<li>可以在一张表中存储大于单个物理磁盘容量的数据，因为我们可以把一张表的不同分区存放在不同物理磁盘上。</li>
+<li>对于已经过期或不需要的数据，可以通过直接删除分区来达到快速删除数据的目的。</li>
+<li>优化查询，在 where 子句中包含分区条件时，可以只扫描必要的一个或多个分区来提高查找效率。</li>
+<li>涉及到聚集函数 sum()、count() 的查询时，可以在每个分区上并行处理。</li>
+<li>凭借在多个磁盘上传播数据，可以实现更高的查询吞吐量。</li>
+</ul>
+<h3 id="Range-分区"><a href="#Range-分区" class="headerlink" title="Range 分区"></a>Range 分区</h3><p>比如指定分区列为 id 字段，当 id &lt; 10 时，放入分区一；当 id &gt; 10 且 &lt;20 时，放入分区二。如果插入的值不在分区列的定义中，那么会抛出异常。这种方式非常适合按照日期列来分区，比如对于销售表，可以根据年份来存放销售记录，在对于某个年份的记录进行操作时，就会变得很方便。</p>
+<h3 id="List-分区"><a href="#List-分区" class="headerlink" title="List 分区"></a>List 分区</h3><p>这种方式和 Range 分区相似，只不过是离散的，不是连续的。对于指定的分区列的值，放入指定的分区，同样，如果插入的值不在分区列的定义中，那么会抛出异常。</p>
+<h3 id="Hash-分区"><a href="#Hash-分区" class="headerlink" title="Hash 分区"></a>Hash 分区</h3><p>这种方式的目的是把行记录均匀地分布在每个分区中，需要自定义哈希函数。如果对于值连续的列 (比如自增长主键) 进行 Hash 分区，可以更好地将数据进行平均分布。</p>
+<h3 id="Key-分区"><a href="#Key-分区" class="headerlink" title="Key 分区"></a>Key 分区</h3><p>和 Hash 分区相似，只不过不用自定义哈希函数，而是使用 MySQL 数据库提供的函数进行分区。</p>
+<h2 id="慢-SQL-的优化"><a href="#慢-SQL-的优化" class="headerlink" title="慢 SQL 的优化"></a>慢 SQL 的优化</h2><h3 id="检查-select-后的字段"><a href="#检查-select-后的字段" class="headerlink" title="检查 select 后的字段"></a>检查 select 后的字段</h3><ol>
+<li>select 后使用了用户自定义函数时，SQL 返回多少行，该函数就会被调用多少次，非常影响性能。</li>
+<li>select 后出现了 text 类型的字段，会消耗大量的 IO 带宽，甚至该字段内容过大，超过 max_allowed_packet 时，会出现报错。</li>
+<li>在 select 中含有另一个子查询的情况叫做内联子查询，SQL 返回多少行，子查询就要执行多少次，非常影响性能。</li>
+</ol>
+<h3 id="检查-where-子句"><a href="#检查-where-子句" class="headerlink" title="检查 where 子句"></a>检查 where 子句</h3><ol>
+<li>where 子句中的索引字段不要参与计算，否则会导致无法走索引。</li>
+<li>注意隐式的类型转化，比如 int 型转换为 varchar 型，这也会导致无法走索引。</li>
+</ol>
+<h3 id="检查-order-by-子句"><a href="#检查-order-by-子句" class="headerlink" title="检查 order by 子句"></a>检查 order by 子句</h3><ol>
+<li>order by 后面使用索引字段，可以充分利用索引本身的有序性来提升性能（前缀索引除外）。</li>
+<li>order by 后面的字段应该按照组合索引的顺序来排列。</li>
+</ol>
+<h3 id="检查索引"><a href="#检查索引" class="headerlink" title="检查索引"></a>检查索引</h3><ol>
+<li>恰当使用前缀索引。比如 varchar 类型如果太长，可以考虑创建前缀索引来减少索引列长度，但是前缀索引无法消除 order by 带来的排序开销。</li>
+<li>对于域名这一类的字段，由于前缀重复度高，而且整体很长，我们可以把域名先倒序（制造区分度），然后建立前缀索引（减少长度）。</li>
+</ol>
+<h2 id="MySQL-常见问题"><a href="#MySQL-常见问题" class="headerlink" title="MySQL 常见问题"></a>MySQL 常见问题</h2><h3 id="主键用自增还是-UUID-？"><a href="#主键用自增还是-UUID-？" class="headerlink" title="主键用自增还是 UUID ？"></a>主键用自增还是 UUID ？</h3><ul>
+<li>如果使用自增，那么每次插入一条新的记录，记录就会顺序添加到最后一条记录 (叶子节点) 的后续位置，如果一页写满，那么就新开辟一页。</li>
+<li>如果使用 UUID，由于每次插入新数据的主键值随机，所以每次都要插入到聚集索引树的一个随机位置，可能会加大 IO 开销。</li>
+</ul>
+<h3 id="主键为什么不推荐有业务含义？"><a href="#主键为什么不推荐有业务含义？" class="headerlink" title="主键为什么不推荐有业务含义？"></a>主键为什么不推荐有业务含义？</h3><p>因为任何有业务含义的列都有改变的可能性,主键一旦带上了业务含义，那么主键就有可能发生变更。主键一旦发生变更，该数据在磁盘上的存储位置就会发生变更，有可能会引发页分裂，产生空间碎片。</p>
+<p>还有就是，带有业务含义的主键，不一定是顺序自增的。那么就会导致数据的插入顺序，并不能保证后面插入数据的主键一定比前面的数据大。如果出现了，后面插入数据的主键比前面的小，就有可能引发页分裂，产生空间碎片。</p>
+<h3 id="货币字段用什么类型？"><a href="#货币字段用什么类型？" class="headerlink" title="货币字段用什么类型？"></a>货币字段用什么类型？</h3><p>用 Decimal 类型，因为 float 和 double 都会有误差。</p>
+<h3 id="where-的执行顺序是怎样的？"><a href="#where-的执行顺序是怎样的？" class="headerlink" title="where 的执行顺序是怎样的？"></a>where 的执行顺序是怎样的？</h3><p>where 条件从左往右执行的，在数据量小的时候不用考虑，但数据量多的时候要考虑条件的先后顺序，此时应遵守一个原则：能排除越多行的条件放在越前面。</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">birdkyle7918</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://birdkyle7918.com/2021/03/04/MySQL 笔记整理/">https://birdkyle7918.com/2021/03/04/MySQL 笔记整理/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://i.v2ex.co/82wYJ5ou.png"><div class="post-qr-code__desc">请我喝杯咖啡（支付宝）</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://i.v2ex.co/0qN35wEN.png"><div class="post-qr-code__desc">请我喝杯咖啡（微信）</div></div></div><div class="social-share pull-right" data-disabled="diandian,tencent,google,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/03/07/Linux%20%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/"><i class="fa fa-chevron-left">  </i><span>Linux 笔记</span></a></div><div class="next-post pull-right"><a href="/2021/02/27/%E5%9B%9E%E5%BF%86%E7%97%87/"><span>回忆症</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://birdkyle7918.com/2021/03/04/MySQL%20%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/';
+  this.page.identifier = '2021/03/04/MySQL 笔记整理/';
+  this.page.title = 'MySQL 笔记';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'birdkyle7918' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://birdkyle7918.disqus.com/count.js" async></script></div></div><footer class="footer-bg" style="background-image: url(https://i.v2ex.co/p7DPQJSB.png)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By birdkyle7918</div><div class="framework-info"><span>Driven - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Linux 笔记"><meta name="keywords" content="技术"><meta name="author" content="birdkyle7918"><meta name="copyright" content="birdkyle7918"><meta name="google-site-verification" content="UYwraydo6Fj6rB7ioL-B_bRBzwq8SkrC9MF21wbMVKQ"><meta name="baidu-site-verification" content="code-DIR5DhCas7"><title>Linux 笔记 | birdkyle7918</title><link rel="shortcut icon" href="https://raw.githubusercontent.com/birdkyle7918/img/main/fantasy.png"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="manifest" href="/manifest.json"><link rel="manifest" href="/manifest.json"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-7006371075588989',
+  enable_page_level_ads: 'true'
+});
+</script><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7d4125647ee5cb6c44b057b49d6818c6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-192131259-1', 'auto');
+ga('send', 'pageview');</script><meta name="google-site-verification" content="UA-192131259-1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="birdkyle7918" type="application/atom+xml">
+</head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="false"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%B5%E5%89%8D%E5%BA%8F%E7%9F%A5%E8%AF%86%EF%BC%9A%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA"><span class="toc-number">1.</span> <span class="toc-text">🔵前序知识：磁盘分区</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%96%B9%E5%BC%8F%E4%B8%8E%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.1.</span> <span class="toc-text">磁盘连接的方式与设备文件名的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MBR-Master-Boot-Record-%E4%B8%8E-GPT-GUID-Partition-Table-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA"><span class="toc-number">1.2.</span> <span class="toc-text">MBR (Master Boot Record) 与 GPT (GUID Partition Table) 磁盘分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%9C%BA%E6%B5%81%E7%A8%8B%E4%B8%AD%E7%9A%84-BIOS-%E4%B8%8E-UEFI-%E5%BC%80%E6%9C%BA%E6%A3%80%E6%B5%8B%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.3.</span> <span class="toc-text">开机流程中的 BIOS 与 UEFI 开机检测程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%B5Linux-%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">🔵Linux 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%B5Linux-%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">🔵Linux 中的进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0"><span class="toc-number">3.1.</span> <span class="toc-text">简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%BB%84"><span class="toc-number">3.2.</span> <span class="toc-text">进程组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E9%97%B4%E7%9A%84%E4%BF%A1%E5%8F%B7"><span class="toc-number">3.3.</span> <span class="toc-text">进程间的信号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%B5-%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">4.</span> <span class="toc-text">🔵 命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E5%B8%B8%E7%94%A8%E6%8C%89%E9%94%AE"><span class="toc-number">4.1.</span> <span class="toc-text">两个常用按键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-%E2%80%9C%E2%80%93help%E2%80%9D-%E6%B1%82%E5%8A%A9"><span class="toc-number">4.2.</span> <span class="toc-text">使用 “–help” 求助</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-man-page-%E6%B1%82%E5%8A%A9"><span class="toc-number">4.3.</span> <span class="toc-text">使用 man page 求助</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%B5-%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%85%B3%E6%9C%BA%E6%96%B9%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">🔵 正确的关机方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%B5-%E6%9D%83%E9%99%90"><span class="toc-number">6.</span> <span class="toc-text">🔵 权限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E5%AF%B9%E4%BA%8E%E4%B8%80%E8%88%AC%E6%96%87%E4%BB%B6%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-number">6.1.</span> <span class="toc-text">权限对于一般文件的含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E5%AF%B9%E4%BA%8E%E7%9B%AE%E5%BD%95%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-number">6.2.</span> <span class="toc-text">权限对于目录的含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">6.3.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E4%B8%8E%E6%8C%87%E4%BB%A4%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">6.4.</span> <span class="toc-text">权限与指令间的关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%B5-%E7%9B%AE%E5%BD%95%E8%A7%84%E5%AE%9A%E4%BB%A5%E5%8F%8A-FHS-%E6%A0%87%E5%87%86"><span class="toc-number">7.</span> <span class="toc-text">🔵 目录规定以及 FHS 标准</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%B5-%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86"><span class="toc-number">8.</span> <span class="toc-text">🔵 文件相关处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">8.1.</span> <span class="toc-text">查看文件内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E6%96%87%E4%BB%B6"><span class="toc-number">8.2.</span> <span class="toc-text">搜索文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%B5-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">9.</span> <span class="toc-text">🔵 文件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%B5-Linux-%E4%B8%AD%E7%9A%84-I-O-%E6%A8%A1%E5%BC%8F"><span class="toc-number">10.</span> <span class="toc-text">🔵 Linux 中的 I&#x2F;O 模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-I-O-%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">10.1.</span> <span class="toc-text">关于 I&#x2F;O 的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6%E4%B8%8E-I-O-%E6%A8%A1%E5%BC%8F"><span class="toc-number">10.2.</span> <span class="toc-text">文件描述符与 I&#x2F;O 模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E6%9C%89%E5%85%B3%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="toc-number">10.3.</span> <span class="toc-text">I&#x2F;O 多路复用有关的系统调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E9%AB%98%E5%B9%B6%E5%8F%91%E7%9A%84%E7%BD%91%E7%BB%9C-I-O-%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF"><span class="toc-number">10.4.</span> <span class="toc-text">支持高并发的网络 I&#x2F;O 编程技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%B5-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B-daemon-%E5%92%8C%E6%9C%8D%E5%8A%A1-service"><span class="toc-number">11.</span> <span class="toc-text">🔵 守护进程 (daemon) 和服务 (service)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">11.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A9%E6%9C%9F-Linux-%E4%BD%BF%E7%94%A8-init-%E5%AF%B9-daemon-%E7%AE%A1%E7%90%86"><span class="toc-number">11.2.</span> <span class="toc-text">早期 Linux 使用 init 对 daemon 管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#systemd-%E5%AF%B9-daemon-%E7%9A%84%E7%AE%A1%E7%90%86"><span class="toc-number">11.3.</span> <span class="toc-text">systemd 对 daemon 的管理</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://raw.githubusercontent.com/birdkyle7918/img/main/fantasy.png"></div><div class="author-info__name text-center">birdkyle7918</div><div class="author-info__description text-center">Born in 2000, Big fan of Jay Chou, Interested in composing music, Coding in Java, Learning in progress.</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">8</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">2</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://i.v2ex.co/p7DPQJSB.png)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">birdkyle7918</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/gallery">Gallery</a><a class="site-page" href="/tags">Tags</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Linux 笔记</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-03-07</time><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/03/07/Linux%20%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/03/07/Linux 笔记整理/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="🔵前序知识：磁盘分区"><a href="#🔵前序知识：磁盘分区" class="headerlink" title="🔵前序知识：磁盘分区"></a>🔵前序知识：磁盘分区</h2><h3 id="磁盘连接的方式与设备文件名的关系"><a href="#磁盘连接的方式与设备文件名的关系" class="headerlink" title="磁盘连接的方式与设备文件名的关系"></a>磁盘连接的方式与设备文件名的关系</h3><p>现在个人计算机常见的磁盘接口有两种，分别是 SATA 与 SAS 接口，主流是 SATA 接口。以 SATA 接口来说，由于 SATA/USB/SAS 等磁盘接口都是使用 SCSI 模块来驱动的， 因此这些接口的磁盘设备文件名都是 /dev/sd[ap] 的格式。</p>
+<h3 id="MBR-Master-Boot-Record-与-GPT-GUID-Partition-Table-磁盘分区"><a href="#MBR-Master-Boot-Record-与-GPT-GUID-Partition-Table-磁盘分区" class="headerlink" title="MBR (Master Boot Record) 与 GPT (GUID Partition Table) 磁盘分区"></a>MBR (Master Boot Record) 与 GPT (GUID Partition Table) 磁盘分区</h3><ul>
+<li><p><strong>MBR</strong>：</p>
+<p>  早期的 Linux 系统为了相容于 Windows 的磁盘，因此使用的是支持 Windows 的 MBR 的方式来处理开机管理程序与分区表。开机管理程序纪录区与分区表则通通放在磁盘的第一个扇区， 这个扇区有这两部分数据：</p>
+<ul>
+<li><p>主要开机记录区 (Master Boot Record) ：可以安装开机管理程序的地方。</p>
+</li>
+<li><p>分区表 (partition table) ：记录整颗硬盘分区的状态。</p>
+<p>MBR 分区有以下特点：</p>
+</li>
+<li><p>所谓的“分区”只是针对分区表部分进行设置而已。</p>
+</li>
+<li><p>分区表所能记录的分区有主要分区 (primary) 和延伸分区 (extended) 。</p>
+</li>
+<li><p>延伸分区最多有一个。</p>
+</li>
+<li><p>其中由于分区表的大小有限，所以能够记录的分区信息也有限，然而已经分出来的延伸分区可以再分为若干个逻辑分区。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>GPT</strong>：</p>
+<p>  为了相容于所有的磁盘，因此在扇区的定义上面，GPT 使用逻辑区块位址 (Logical Block Address, LBA) 来规划，第一个 LBA 称为 LBA0。</p>
+<p>  GPT 使用了 34 个 LBA 区块来记录分区信息。与 MBR 仅用一个区块来记录分区信息，损坏就死光光的情况不同，GPT 除了前面 34 个 LBA 之外，整个磁盘的最后 33 个 LBA 也拿来作为另一个备份，这样大大增强安全性。</p>
+<p>  <img src="https://i.v2ex.co/GobELN0b.png"></p>
+<p>  上图的解释如下：</p>
+<ul>
+<li><p>LBA0 (MBR 相容区块)：与 MBR 模式相似的，这个相容区块也分为两个部份，相同的是，一部分存放开机管理程序；不同的是，在原本应该存放分区记录表的地方，仅存放一个特殊标志的分区，用来标识此磁盘为 GPT 格式，而不认识 GPT 分区表的磁盘管理程序， 就不会认识这颗磁盘，除非用户有特别要求要处理这颗磁盘，否则该管理软件不能修改此分区信息，进一步保护了磁盘。</p>
+</li>
+<li><p>LBA1 (GPT 表头纪录)：这个部份记录了分区表本身的位置与大小，同时记录了备份用的 GPT 分区 (就是后面的 32 个 LBA 区块) 放置的位置， 同时放置了分区表的检验机制码，操作系统可以根据这个检验码来判断 GPT 是否正确。若有错误，还可以通过这个纪录区来取得备份的 GPT 来恢复 GPT 的正常运行。</p>
+</li>
+<li><p>LBA2-33 (实际纪录分区信息处)：每个 LBA 都可以记录若干个分区信息。</p>
+<p>GPT 分区已经没有所谓的主、延伸、逻辑分区的概念，既然每笔记录都可以独立存在， 当然每个都可以视为是主分区，每一个分区都可以格式化。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="开机流程中的-BIOS-与-UEFI-开机检测程序"><a href="#开机流程中的-BIOS-与-UEFI-开机检测程序" class="headerlink" title="开机流程中的 BIOS 与 UEFI 开机检测程序"></a>开机流程中的 BIOS 与 UEFI 开机检测程序</h3><p>没有执行软件的硬件是没有用的，所以就有了操作系统，用来管理所有的硬件，使计算机能够认识硬盘内的文件系统，并且进一步的读取硬盘内的软件文件与执行该软件来达成各项软件的执行目的。</p>
+<p>问题是，操作系统本身也是软件，那么我的计算机又是如何认识这个操作系统软件并且执行他的？明明开机时我的计算机还没有任何软件系统，那他要如何读取硬盘内的操作系统文件？这就得要牵涉到计算机的开机程序了，主要有 BIOS 和 UEFI 两种机制。</p>
+<ul>
+<li><p><strong>BIOS 搭配 MBR/GPT 的开机流程</strong>：</p>
+<p>  BIOS 是一个写入到主板上的一个固件 (固件就是写入到硬件上的一个软件程序)。这个 BIOS 就是在开机的时候，计算机系统会主动执行的第一个程序。</p>
+<p>  对于 MBR 磁盘，整个开机流程大致是以下过程：</p>
+<ol>
+<li><p>开机自动执行 BIOS 固件，认识第一个可开机的设备；</p>
+</li>
+<li><p>运行 MBR 第一个扇区中内含的开机管理程序；</p>
+</li>
+<li><p>开机管理程序读取核心文件；</p>
+</li>
+<li><p>操作系统开始运行并且接管后面所有的事情。</p>
+<p>对于 GPT 磁盘，整个过程类似，只不过需要 BIOS 能够识别出 GPT 即可。</p>
+<p>开机管理程序 (boot loader) 主要有下面一些功能：</p>
+</li>
+</ol>
+<ul>
+<li><p>提供菜单：使用者可以选择不同的开机项目，这也是多系统开机的重要功能。</p>
+</li>
+<li><p>载入核心文件：直接指向可开机的程序区段来开始操作系统。</p>
+</li>
+<li><p>转交其他 loader：将开机管理功能转交给其他 loader 负责。</p>
+<p>第三点表示计算机系统里面可能具有两个以上的开机管理程序。开机管理程序并不是只能存放在 MBR 的第一个扇区中，每一个分区里都能存放开机管理程序，比如在一个分区中放置 Windows 的开机管理程序，在另一个分区中放置 Linux 的开机管理程序。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>UEFI 搭配 GPT 的开机流程</strong>：</p>
+<p>  UEFI 使用 C 程序语言，比起使用汇编语言的传统 BIOS 要更容易开发，也因为使用 C 语言来撰写，因此如果开发者够厉害，甚至可以在 UEFI 开机阶段就让该系统了解 TCP/IP 而直接上网，根本不需要进入操作系统，这让小型系统的开发充满各种可能性。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>比较项目</th>
+<th>传统BIOS</th>
+<th>UEFI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>使用的语言</td>
+<td>汇编语言</td>
+<td>C 语言</td>
+</tr>
+<tr>
+<td>硬件资源控制</td>
+<td>使用中断（IRQ） 管理不可变的内存存取不可变得输入/输出存取</td>
+<td>使用驱动程序与协定</td>
+</tr>
+<tr>
+<td>处理器运行环境</td>
+<td>16 位</td>
+<td>CPU 保护模式</td>
+</tr>
+<tr>
+<td>扩充方式</td>
+<td>通过 IRQ 链接</td>
+<td>直接载入驱动程序</td>
+</tr>
+<tr>
+<td>第三方厂商支持</td>
+<td>较差</td>
+<td>较好且可支持多平台</td>
+</tr>
+<tr>
+<td>图形化能力</td>
+<td>较差</td>
+<td>较好</td>
+</tr>
+<tr>
+<td>内置简化操作系统前环境</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+</tbody></table>
+<h2 id="🔵Linux-简介"><a href="#🔵Linux-简介" class="headerlink" title="🔵Linux 简介"></a>🔵Linux 简介</h2><img src="https://raw.githubusercontent.com/birdkyle7918/img/main/Linux%20%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" style="zoom:56%;box-shadow: 3px 3px 10px 10px rgba(0,0,0,.15)" />
+
+<p>Linux 有 3 种不同的接口：</p>
+<ol>
+<li>真正的系统调用接口</li>
+<li>库函数接口</li>
+<li>由标准应用程序 (如 shell) 构成的接口</li>
+</ol>
+<img src="https://raw.githubusercontent.com/birdkyle7918/img/main/Linux%20%E5%86%85%E6%A0%B8%E7%BB%93%E6%9E%84.png" style="zoom:55%;box-shadow: 3px 3px 10px 10px rgba(0,0,0,.15)" />
+
+<p>Linux 的内核结构：</p>
+<ul>
+<li>IO 部件：从顶层看，这些 IO 功能全整合在一个虚拟文件系统层中，以顶层的视角，对一个文件进行读操作，不论是在内存中还是在磁盘中，都和从终端输入中读取一个字符是一样的；从底层看，所有的 IO 操作最终都要通过某个设备驱动器。</li>
+<li>内存管理部件：功能包括维护虚拟内存到物理内存的映射，实现一个好的页面置换算法等。</li>
+<li>进程管理部件：主要的任务是进程的创建和终止，还有进程的调度。</li>
+</ul>
+<p>处在 3 个部件最顶层的是内核的系统调用接口，所有的系统调用都来自于这里，其触发一个陷入，并将系统从用户态转换到受保护的内核态，从而将控制权交给上述的部件之一。</p>
+<h2 id="🔵Linux-中的进程"><a href="#🔵Linux-中的进程" class="headerlink" title="🔵Linux 中的进程"></a>🔵Linux 中的进程</h2><h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p>Linux 中创建新进程的方法是 fork 系统调用。调用 fork 函数的进程叫父进程，新的进程叫做子进程。fork 函数给父进程返回一个非零值作为子进程的 PID，而给子进程返回 0。也就是父进程会知道子进程的 PID，如果子进程想知道自己的 PID，可以调用 getpid。</p>
+<p>fork 刚结束调用时，父、子进程的内存映像、变量、寄存器以及其他所有东西都是相同的，然后它们各循其路。</p>
+<p>在 Linux 系统内核中，进程通过数据结构 task_struct 被表示成任务 (task)，task_struct 存在于内存中。不像其他的操作系统会区别进程、轻量级进程和线程，Linux 系统用任务的数据结构来表示所有的执行上下文。所以，一个单线程的进程只有一个任务数据结构，而一个多线程的进程会为每一个用户级线程分配一个任务数据结构。最后，Linux 内核是多线程的，并且它所拥有的是与任何用户线程无关的内核级线程，这些内核线程执行内核代码。</p>
+<img src="https://raw.githubusercontent.com/birdkyle7918/img/main/Linux%20%E7%9A%84%E8%BF%9B%E7%A8%8B.png" style="zoom:50%;box-shadow: 3px 3px 10px 10px rgba(0,0,0,.15)" />
+
+<h3 id="进程组"><a href="#进程组" class="headerlink" title="进程组"></a>进程组</h3><p>一个 session 可能会有一个 session 首进程，而一个 session 首进程可能会有一个控制终端。</p>
+<p>一个进程组可能会有一个进程组首进程。进程组首进程的 PID 与该进程组的 PID 相同。</p>
+<p>与终端交互的进程是前台进程，否则便是后台进程。</p>
+<h3 id="进程间的信号"><a href="#进程间的信号" class="headerlink" title="进程间的信号"></a>进程间的信号</h3><p>一个进程可以给另一个进程发送信号，用来告诉操作系统当信号到来时它们希望发生什么事件。一个进程只可以给它所在的进程组中的进程发送信号。</p>
+<p>常见的信号有 SIGHUP（挂断），接受到该信号的进程会终止自己。</p>
+<p>SIGHUP 会在下面 3 种情况下发送给相应的进程：</p>
+<ol>
+<li>终端关闭时，该信号被发送到 session 首进程以及作为 job 提交的进程（也就是用 &amp; 符号提交的进程）</li>
+<li>session 首进程退出时，该信号被发送到该 session 中的前台进程组和后台进程组中的每一个进程</li>
+<li>若进程的退出，导致一个进程组变成了孤儿进程组，且新出现的孤儿进程组中有进程处于停止状态，则 SIGHUP 和 SIGCONT 信号会按顺序先后发送到新孤儿进程组中的每一个进程。</li>
+</ol>
+<p><strong>&amp; 符号：</strong></p>
+<p>&amp; 符号就是将程序放在后台运行，也就是作为一个 job 来运行。如果此时（该命令还没完全执行结束）终端断开，程序还是会被 SIGHUP 信号终止，也就是上面提到的第 1 种场景。</p>
+<p>但是如果此时在终端中执行 exit 命令，就会使得当前主进程退出。从而使得后台执行的程序成为孤儿进程，从而被 init 进程接管。此时终端再断开就 不会受到 SIGHUP 信号了。这时即使终端断开，程序也会继续运行。这也是为什么我们在一个 shell 脚本中通过 &amp; 执行一个程序后，shell 脚本执行完，即使终端断开，shell 脚本启动的后台程序也不会退出。因为 shell 执行完后，其启动的程序就已经成为了孤儿进程，从而被 init 接管了。</p>
+<p><strong>nohup 命令的原理</strong>：</p>
+<p>nohup 的格式为 nohup command &amp;</p>
+<p>由 nohup 命令执行的 command 程序会忽略所有的 SIGHUP 信号，从而不会在终端关闭或退出时由于 SIGHUP 信号导致程序退出。</p>
+<p>nohup 本身不会将程序放入后台运行，但是通过 nohup 方式启动的程序，由于其忽略了 SIGHUP 信号，其接收到 SIGHUP 信号也不会退出。</p>
+<h2 id="🔵-命令行"><a href="#🔵-命令行" class="headerlink" title="🔵 命令行"></a>🔵 命令行</h2><h3 id="两个常用按键"><a href="#两个常用按键" class="headerlink" title="两个常用按键"></a>两个常用按键</h3><p>[Ctrl]-c 按键：当某个程序在中断窗口跑不停时，可以使用这个按键来强行停止。</p>
+<p>[Ctrl]-d 按键：这个按键可以终止键盘输入，类似 exit。</p>
+<h3 id="使用-“–help”-求助"><a href="#使用-“–help”-求助" class="headerlink" title="使用 “–help” 求助"></a>使用 “–help” 求助</h3><p>基本上，如果是指令，那么通过这个简单的 –help 就可以很快速的取得你所需要的选项、参数的说明，不过，通常 –help 用在协助你查询“你曾经用过的指令所具备的选项与参数”而已， 如果你要使用的是从来没有用过得指令，或者是你要查询的根本就不是指令，而是文件的“格式”时，那就得要通过 man page 。</p>
+<h3 id="使用-man-page-求助"><a href="#使用-man-page-求助" class="headerlink" title="使用 man page 求助"></a>使用 man page 求助</h3><p>man + 指令的输出结果中，在指令后面会有一个数字，这个数字代表的意义如下：</p>
+<table>
+<thead>
+<tr>
+<th>代号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>使用者在 shell 环境中可以操作的指令或可执行文件</td>
+</tr>
+<tr>
+<td>2</td>
+<td>系统核心可调用的函数与工具等</td>
+</tr>
+<tr>
+<td>3</td>
+<td>一些常用的函数 (function) 与函数库 (library) ，大部分为 C 的函数库 (libc)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>设备文件的说明，通常在 /dev 下的文件</td>
+</tr>
+<tr>
+<td>5</td>
+<td>配置文件或者是某些文件的格式</td>
+</tr>
+<tr>
+<td>6</td>
+<td>游戏 (games)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>惯例与协定等，例如 Linux 文件系统、网络协定、ASCII code 等等的说明</td>
+</tr>
+<tr>
+<td>8</td>
+<td>系统管理员可用的管理指令</td>
+</tr>
+<tr>
+<td>9</td>
+<td>跟 kernel 有关的文件</td>
+</tr>
+</tbody></table>
+<p>输出结果中，也分成了好几个部分，大致如下：</p>
+<table>
+<thead>
+<tr>
+<th>代号</th>
+<th>内容说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NAME</td>
+<td>简短的说明</td>
+</tr>
+<tr>
+<td>SYNOPSIS</td>
+<td>简短的指令下达语法 (syntax) 简介</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>较为完整的说明，这部分最好仔细看看</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>针对 SYNOPSIS 部分中，有列举的所有可用的选项说明</td>
+</tr>
+<tr>
+<td>COMMANDS</td>
+<td>当这个程序（软件）在执行的时候，可以在此程序（软件）中下达的指令</td>
+</tr>
+<tr>
+<td>FILES</td>
+<td>这个程序或数据所使用或参考或链接到的某些文件</td>
+</tr>
+<tr>
+<td>SEE ALSO</td>
+<td>可以参考的，跟这个指令或数据有相关的其他说明</td>
+</tr>
+<tr>
+<td>EXAMPLE</td>
+<td>一些可以参考的范例</td>
+</tr>
+</tbody></table>
+<p>对于输出结果的查阅技巧：</p>
+<ol>
+<li>先察看 NAME 部分，约略看一下这个指令的意思</li>
+<li>再详看一下 DESCRIPTION，这个部分会提到很多相关的数据与使用时机，从这个地方可以学到很多小细节</li>
+<li>而如果这个指令本身就很熟悉，那么主要就是查看 OPTIONS 的部分了，可以知道每个选项的意义，这样就可以下达比较细部的指令内容</li>
+</ol>
+<h2 id="🔵-正确的关机方法"><a href="#🔵-正确的关机方法" class="headerlink" title="🔵 正确的关机方法"></a>🔵 正确的关机方法</h2><p>由于装有 Linux 操作系统的服务器一般是多人使用的，所以关机时必须注意以下问题：</p>
+<ul>
+<li>用户在线状态：使用 who 命令观察有哪些用户还在线。</li>
+<li>网络连接状态：使用 netstat -a 命令观察网络连接。</li>
+<li>进程状态：使用 ps -aux 观察进程状态。</li>
+</ul>
+<h2 id="🔵-权限"><a href="#🔵-权限" class="headerlink" title="🔵 权限"></a>🔵 权限</h2><h3 id="权限对于一般文件的含义"><a href="#权限对于一般文件的含义" class="headerlink" title="权限对于一般文件的含义"></a>权限对于一般文件的含义</h3><p>文件是实际含有数据的地方，包括一般文本文件、数据库内容档、二进制可可执行文件等等。因此，权限对于文件来说，他的意义是这样的：</p>
+<ul>
+<li>r ：可读取此文件的实际内容，如读取文本文件的文字内容等。</li>
+<li>w ：可以编辑、新增或者是修改该文件的内容（但不含删除该文件）。</li>
+<li>x ：该文件具有可以被系统执行的权限。</li>
+</ul>
+<h3 id="权限对于目录的含义"><a href="#权限对于目录的含义" class="headerlink" title="权限对于目录的含义"></a>权限对于目录的含义</h3><ul>
+<li>r ：表示具有读取目录中文件清单的权限，也就是可以利用 ls 这个指令将该目录的内容列表显示出来。</li>
+<li>w ：表示具有<strong>异动</strong>该目录结构清单的权限，包括：在其中创建新的文件或目录、删除已经存在的文件或目录、将已经存在的文件或目录重命名、搬移该目录中的文件或目录的位置。</li>
+<li>x ：表示能否进入目录的权限，也就是能否使用 cd 命令切换进目录，把目录当成抽屉的话，这就相当于抽屉的钥匙。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>对于一般文件，权限主要是针对“某具体文件中的内容”；对于目录，权限针对的是“目录内的文件”。</p>
+<h3 id="权限与指令间的关系"><a href="#权限与指令间的关系" class="headerlink" title="权限与指令间的关系"></a>权限与指令间的关系</h3><p>使用者进入某目录需要的基本权限包括：</p>
+<ul>
+<li>使用者对这个目录至少需要具有 x 的权限。</li>
+<li>如果使用者想要在这个目录内利用 ls 列出文件列表，则使用者对此目录还需要 r 的权限。</li>
+</ul>
+<p>使用者在某个目录内读取一个文件需要的基本权限包括：</p>
+<ul>
+<li>使用者对这个目录至少需要具有 x 权限。</li>
+<li>使用者对该文件至少需要具有 r 的权限。</li>
+</ul>
+<p>使用者修改一个文件需要的基本权限包括：</p>
+<ul>
+<li>使用者在该文件所在的目录至少要有 x 权限。</li>
+<li>使用者对该文件至少要有 r, w 权限。</li>
+</ul>
+<p>使用者创建一个文件需要的基本权限包括：</p>
+<ul>
+<li>使用者在该目录要具有 w,x 的权限，重点在 w。</li>
+</ul>
+<h2 id="🔵-目录规定以及-FHS-标准"><a href="#🔵-目录规定以及-FHS-标准" class="headerlink" title="🔵 目录规定以及 FHS 标准"></a>🔵 目录规定以及 FHS 标准</h2><p>特定的文件必须有规律地放入特定的目录中。FHS (Filesystem Hierarchy Standard) 标准指出，目录有四种类型：</p>
+<ul>
+<li>可分享的：可以分享给其他系统挂载使用的目录，所以包括可执行文件与使用者的邮件等数据， 是能够分享给网络上其他主机挂载用的目录。</li>
+<li>不可分享的：自己机器上面运行的设备文件或者是与程序有关的 socket 文件等， 由于仅与自身机器有关，所以当然就不适合分享给其他主机了。</li>
+<li>不变的：有些数据是不会经常变动的，不随着发行版而变动。例如函数库、文件说明文档、系统管理员所管理的主机服务配置文件等等。</li>
+<li>可变动的：经常改变的数据，例如登录文件、一般用户可自行收受的新闻群组等。</li>
+</ul>
+<p><strong>必须存在的目录：</strong></p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>应放置的文件内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/bin</td>
+<td>系统有很多放置可执行文件的目录，但 /bin 比较特殊。因为 /bin 放置的是在单人维护模式下还能够被操作的指令。在 /bin 下面的指令可以被 root 与一般帐号使用，主要有：cat, chmod, chown, date, mv, mkdir, cp, bash 等等常用的指令。</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td>这个目录主要在放置开机会使用到的文件，包括 Linux 核心文件以及开机菜单与开机所需配置文件等等。Linux kernel 常用的文件名为：vmlinuz，如果使用的是 grub2 这个开机管理程序， 则还会存在 /boot/grub2 这个目录喔！</td>
+</tr>
+<tr>
+<td>/dev</td>
+<td>在 Linux 系统上，任何设备与周边设备都是以文件形式存在于这个目录当中的。你只要通过存取这个目录下面的某个文件，就等于存取某个设备。比要重要的文件有 /dev/null，/dev/zero， /dev/tty，/dev/loop， /dev /sd 等等。</td>
+</tr>
+<tr>
+<td>/etc</td>
+<td>系统主要的配置文件几乎都放置在这个目录内，例如人员的帐号密码档、 各种服务的启始档等等。一般来说，这个目录下的各文件属性是可以让一般使用者查阅的， 但是只有 root 有权力修改。FHS 建议不要放置可执行文件 (binary) 在这个目录中。比较重要的文件有： /etc/modprobe.d/，/etc/passwd，/etc/fstab，/etc/issue 等等。另外 FHS 还规范几个重要的目录最好要存在 /etc/ 目录下：/etc/opt（必须存在）：这个目录中放置第三方软件的相关配置文件。</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>系统的函数库非常的多，而 /lib 放置的则是在开机时会用到的函数库， 以及在 /bin 或 /sbin 下面的指令会调用的函数库而已。什么是函数库呢？你可以将他想成是“外挂”，某些指令必须要有这些“外挂”才能够顺利完成程序的执行之意。另外 FSH 还要求下面的目录必须要存在：/lib/modules/，这个目录主要放置可抽换式的核心相关模块（驱动程序）。</td>
+</tr>
+<tr>
+<td>/media</td>
+<td>media 是“媒体”的英文，顾名思义，这个 /media 下面放置的就是可移除的设备，包括软盘、光盘、DVD 等等设备都暂时挂载于此。常见的文件名有：/media/floppy， /media/cdrom 等等。</td>
+</tr>
+<tr>
+<td>/mnt</td>
+<td>如果你想要暂时挂载某些额外的设备，一般建议你可以放置到这个目录中。在古早时候，这个目录的用途与 /media 相同啦！只是有了 /media 之后，这个目录就用来暂时挂载用了。</td>
+</tr>
+<tr>
+<td>/opt</td>
+<td>这个是给第三方软件放置的目录。什么是第三方软件啊？举例来说，KDE 这个桌面管理系统是一个独立的计划，不过他可以安装到 Linux 系统中，因此 KDE 的软件就建议放置到此目录下了。另外，如果你想要自行安装额外的软件（非原本的 distribution 提供的），那么也能够将你的软件安装到这里来。不过，以前的 Linux 系统中，我们还是习惯放置在 /usr/local 目录下呢！</td>
+</tr>
+<tr>
+<td>/run</td>
+<td>早期的 FHS 规定系统开机后所产生的各项信息应该要放置到 /var/run 目录下，新版的 FHS 则规范到 /run 下面。由于 /run 可以使用内存来仿真，因此性能上会好很多！</td>
+</tr>
+<tr>
+<td>/sbin</td>
+<td>Linux 有非常多指令是用来设置系统环境的，这些指令只有 root 才能够利用来“设置”系统，其他使用者最多只能用来“查询”而已。放在 /sbin 下面的为开机过程中所需要的，里面包括了开机、修复、还原系统所需要的指令。至于某些服务器软件程序，一般则放置到 usr/sbin/ 当中。至于本机自行安装的软件所产生的系统可执行文件 (system binary)， 则放置到 /usr/local/sbin/ 当中了。常见的指令包括：fdisk，fsck，ifconfig，mkfs 等等。</td>
+</tr>
+<tr>
+<td>/srv</td>
+<td>srv 可以视为“service”的缩写，是一些网络服务启动之后，这些服务所需要取用的数据目录。常见的服务例如 WWW, FTP 等等。举例来说，WWW 服务器需要的网页数据就可以放置在 /srv/www/ 里面。不过，系统的服务数据如果尚未要提供给网际网络任何人浏览的话，默认还是建议放置到 /var/lib 下面即可。</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td>这是让一般使用者或者是正在执行的程序暂时放置文件的地方。这个目录是任何人都能够存取的，所以你需要定期的清理一下。当然，重要数据不可放置在此目录啊！因为 FHS 甚至建议在开机时，应该要将 /tmp下的数据都删除。</td>
+</tr>
+<tr>
+<td>/usr</td>
+<td>第二层 FHS 设置，后续介绍</td>
+</tr>
+<tr>
+<td>/var</td>
+<td>第二层 FHS 设置，主要为放置变动性的数据，后续介绍</td>
+</tr>
+</tbody></table>
+<p><strong>建议存在的目录：</strong></p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>应该放置的内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/home</td>
+<td>这是系统默认的使用者主文件夹 (home directory)。在你新增一个一般使用者帐号时， 默认的使用者主文件夹都会规范到这里来。比较重要的是，主文件夹有两种代号：~ 代表目前这个使用者的主文件夹；~user ：则代表 user 的主文件夹！</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>用来存放与 /lib 不同的格式的二进制函数库，例如支持 64 位的 /lib64 函数库等</td>
+</tr>
+<tr>
+<td>/root</td>
+<td>root 用户的文件夹。之所以放在这里，是因为如果进入单人维护模式而仅挂载根目录时， 该目录就能够拥有 root 的主文件夹，所以我们会希望 root 的主文件夹与根目录放置在同一个分区中。</td>
+</tr>
+</tbody></table>
+<p>有两个目录需要特别注意：</p>
+<ul>
+<li>/usr ：这个目录其实是 Unix Software Resource 的缩写，表示 Unix 系统软件资源。FHS 建议所有的软件开发者应该将他们的数据合理放置到这个目录下的次目录。</li>
+<li>/var ：如果说 /usr 是安装时会占用较大硬盘容量的目录，那么 /var 就是在系统运行后逐渐占用硬盘容量的目录。该目录主要针对常态性变动的文件，包括 cache、log file 以及某些软件运行所产生的文件，例如 MySQL 数据库文件等等。</li>
+</ul>
+<h2 id="🔵-文件相关处理"><a href="#🔵-文件相关处理" class="headerlink" title="🔵 文件相关处理"></a>🔵 文件相关处理</h2><h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><p>概述：</p>
+<ul>
+<li>cat ：显示整个文件的内容。</li>
+<li>tac ：从最后一行开始显示整个文件的内容。</li>
+<li>more ：分页显示文件内容。</li>
+<li>less ：与 more 类似，不同的是，less 可以往前翻页。</li>
+<li>head ：只查看文件的头几行。</li>
+<li>tail ：只查看文件的末几行。</li>
+<li>od ：以二进制的方式读取文件内容。</li>
+</ul>
+<p>more 命令：</p>
+<ul>
+<li>space 键：向下翻一页。</li>
+<li>Enter 键：向下翻一行。</li>
+<li>/ + 字符串：搜寻一个字符串。</li>
+<li>q 键：停止显示文件内容。</li>
+</ul>
+<p>less 命令：</p>
+<ul>
+<li>space 键：向下翻一页。</li>
+<li>pagedown 键：向下翻一页。</li>
+<li>pageup 键：向上翻一页。</li>
+<li>/ + 字符串：向下搜索字符串。</li>
+<li>? + 字符串：向上搜索字符串。</li>
+<li>q 键：停止显示文件内容。</li>
+</ul>
+<h3 id="搜索文件"><a href="#搜索文件" class="headerlink" title="搜索文件"></a>搜索文件</h3><p>find 命令一般不常用，因为它是直接搜寻硬盘。一般使用 whereis 和 locate 命令来定位文件，如果无法找到，才会使用 find 命令来查找。因为 whereis 只会找系统中某些特定目录下面的文件，而 locate 使用数据库来搜寻文件。</p>
+<p><strong>whereis</strong>：</p>
+<p>whereis 只会找系统中某些特定目录下面的文件，主要是针对 /bin 和 /sbin 下面的可执行文件， 以及 /usr/share/man 下面的 man page 文件。</p>
+<p><strong>locate</strong>：</p>
+<p>使用数据库来搜寻，已创建的数据库放在 /var/lib/mlocate/ 中。此数据库的创建是每天一次（每个发行版略有不同），更新数据库使用 updatedb 命令。</p>
+<p><strong>find</strong>：</p>
+<p>直接在磁盘中遍历搜索，会很慢。</p>
+<h2 id="🔵-文件系统"><a href="#🔵-文件系统" class="headerlink" title="🔵 文件系统"></a>🔵 文件系统</h2><p>Linux 的 Ext 文件系统是<strong>索引式文件系统</strong>，使用 i-node 来记录所用到的磁盘块号，总共有三部分：</p>
+<ul>
+<li>superblock ：记录此文件系统的整体信息，包括 inode/block 的总量、使用量、剩余量，以及文件系统的格式与相关信息等。</li>
+<li>i-node ：一个文件占用一个 i-node ，存放文件的属性和用到的 block 号。</li>
+<li>block ：存放文件的实际内容，若文件太大，会占用多个 block。</li>
+</ul>
+<p>对于每个文件（不管是目录还是普通文件），都会占用一个 i-node。而对于目录来说，由于其只存放文件名，一般初始只会得到一个 block，目录的 i-node 记录了这个 block 的号码，然后 block 中存放的是目录中文件的 i-node 号码。如果某目录下的文件太多，该目录可能也会占用不止一个 block。</p>
+<h2 id="🔵-Linux-中的-I-O-模式"><a href="#🔵-Linux-中的-I-O-模式" class="headerlink" title="🔵 Linux 中的 I/O 模式"></a>🔵 Linux 中的 I/O 模式</h2><h3 id="关于-I-O-的基本概念"><a href="#关于-I-O-的基本概念" class="headerlink" title="关于 I/O 的基本概念"></a>关于 I/O 的基本概念</h3><ul>
+<li><strong>同步与异步</strong>：当一个同步调用发出后，调用者一直要等待返回结果通知后，才能进行后续的执行；当一个异步调用发出后，调用者不能立刻得到返回的结果通知，实际处理这个调用的部件在完成后，通过状态、通知或回调来告知调用者可以继续执行。</li>
+<li><strong>阻塞和非阻塞</strong>：这两个概念主要是从线程等待消息通知时的状态角度来说的，无所谓同步异步。阻塞指得到调用结果之前，线程会被挂起；非阻塞则线程不会被挂起，立即返回。</li>
+</ul>
+<p><strong>总结</strong>：同步就是指啥事都调用者负责；异步就是把事情分一部分给被调用者。阻塞就是调用者线程干等，其他啥也不干；非阻塞就是调用者线程可以干其他事情，然后时不时看一眼调用是否产生结果并结束。同步与异步关注的是消息通知机制，阻塞非阻塞关注的是等待消息通知时，线程的状态。</p>
+<h3 id="文件描述符与-I-O-模式"><a href="#文件描述符与-I-O-模式" class="headerlink" title="文件描述符与 I/O 模式"></a>文件描述符与 I/O 模式</h3><p>文件描述符 (File Description) 是计算机中的一个术语，是一个指向已打开文件的引用。fd 在形式上是一个非负整数，实际上它是一个索引值，指向内核中为每一个进程所维护的该进程已打开文件的记录表。当进程打开一个现有文件或者创建一个新文件时，内核向该进程返回一个文件描述符。在涉及底层的程序编写时，常常会围绕 fd 展开。注意：fd 这一概念只适用于类 UNIX 系统，不适用于 Windows 系统。</p>
+<p>在 Linux 中，I/O 全过程有 2 个阶段：</p>
+<ol>
+<li>等待数据到达并进入内核缓冲区。</li>
+<li>将数据从缓冲区搬迁到用户进程地址空间。</li>
+</ol>
+<img src="https://raw.githubusercontent.com/birdkyle7918/img/main/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%92%8C%E8%BF%94%E5%9B%9E.png" style="zoom:50%;box-shadow: 3px 3px 10px 10px rgba(0,0,0,.15)" />
+
+<p>正因为这两个阶段，Linux 系统主要产生了 4 种网络模式的方案：</p>
+<ul>
+<li>阻塞 I/O</li>
+<li>非阻塞 I/O</li>
+<li>I/O 多路复用</li>
+<li>异步 I/O</li>
+</ul>
+<p><strong>阻塞 I/O</strong>  ：默认情况下的阻塞 I/O 都是阻塞的，例如 recvfrom 系统调用，直到整个阻塞 I/O 过程完成之前，也就是数据复制到进程地址空间之前，该进程都是处于阻塞状态。</p>
+<p>**非阻塞 I/O (NOBLOCK)**：进程采用轮询的机制，当等待数据到达时，进程不会阻塞，会一直轮询，但是数据到达后，从内核空间拷贝到进程空间，这一阶段会阻塞。</p>
+<p>**I/O 多路复用(multiplexing)**：又叫做事件驱动 I/O，主要是 select 、poll 系统调用实现的。阻塞发生在 select/poll 操作上， select/poll 不断轮询多个 fd (网络情况下就是多个 socket)，当某个 socket 有数据到达并准备好了，那么就通知进程再调用 recvfrom 将数据复制到进程空间。支持的 fd 数量有限。</p>
+<p><strong>异步 I/O (AIO)</strong> ：使用 aio_read 调用，给内核传递描述符、缓冲区指针、缓冲区大小和文件偏移量，并告诉内核，当整个 I/O 过程完成后通知进程。该系统调用立即返回，期间进程完全不会被阻塞。</p>
+<img src="https://raw.githubusercontent.com/birdkyle7918/img/main/IO%20%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3.png" style="zoom:50%;box-shadow: 3px 3px 10px 10px rgba(0,0,0,.15)" />
+
+<img src="https://raw.githubusercontent.com/birdkyle7918/img/main/IO%20%E6%A8%A1%E5%BC%8F.png" style="zoom:50%;box-shadow: 3px 3px 10px 10px rgba(0,0,0,.15)" />
+
+<h3 id="I-O-多路复用有关的系统调用"><a href="#I-O-多路复用有关的系统调用" class="headerlink" title="I/O 多路复用有关的系统调用"></a>I/O 多路复用有关的系统调用</h3><p><strong>select</strong> ：</p>
+<p>select 可以同时监视多个 fd，调用 select 的进程会被阻塞，直到有文件描述符就绪、或者超时，此时 select 函数返回，然后可以通过遍历 fd，来找到就绪的描述符。</p>
+<p>select 的缺点有：</p>
+<ul>
+<li>单个进程可以监听的 fd 数量有上限，一般是 1024 个。</li>
+<li>对 socket 的扫描采用的是轮询的方式，效率比较低。</li>
+<li>需要维护一个用来存放大量 fd 的数据结构，这样会使得用户空间和内核空间在传递该结构时开销较大。</li>
+</ul>
+<p><strong>poll</strong>：</p>
+<p>poll 与 select 类似，有些许差别。</p>
+<ul>
+<li>大量的 fd 数组被整体复制于用户态和内核态地址空间之间，而不管这样的复制是不是有意义。</li>
+<li>有“水平触发”的特点，如果报告了 fd 后，fd 没有被处理，那么下次会继续报告该 fd。</li>
+</ul>
+<p><strong>epoll</strong>：</p>
+<ul>
+<li>能够监听的 fd 没有上限。</li>
+<li>效率提升，不是采用轮询的方式，当 fd 数量增加时，效率并不会下降。</li>
+<li>从用户空间拷贝到内核空间时，运用了 mmap() 映射减少了复制开销。</li>
+</ul>
+<h3 id="支持高并发的网络-I-O-编程技术"><a href="#支持高并发的网络-I-O-编程技术" class="headerlink" title="支持高并发的网络 I/O 编程技术"></a>支持高并发的网络 I/O 编程技术</h3><p>在高 TCP 并发的情形下，如果使用同步 I/O，这会严重阻塞程序的运转，除非为每个 TCP 连接的 I/O 创建一个线程。但是，过多的线程又会因系统对线程的调度造成巨大开销。</p>
+<p>因此，在高 TCP 并发的情形下使用同步 I/O 是不可取的，这时可以考虑使用 I/O 多路复用或异步 I/O。</p>
+<h2 id="🔵-守护进程-daemon-和服务-service"><a href="#🔵-守护进程-daemon-和服务-service" class="headerlink" title="🔵 守护进程 (daemon) 和服务 (service)"></a>🔵 守护进程 (daemon) 和服务 (service)</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>简单的说，系统为了某些功能必须要提供一些常驻后台的服务（不论是系统本身还是网络方面），这个服务就称为 service，达成这个 service 的程序我们就称呼他为 daemon，事实上，这两者不用作很严格的区分。</p>
+<p>每一个 daemon 的开发者，当初在开发他们的服务时，名称后通常都会加上一个 d，这个 d 就是代表 daemon。所以，我们使用了 ps 与 top 来观察程序时，都会发现到很多的 {xxx}d 的程序，通常那就是一些daemon 程序。</p>
+<h3 id="早期-Linux-使用-init-对-daemon-管理"><a href="#早期-Linux-使用-init-对-daemon-管理" class="headerlink" title="早期 Linux 使用 init 对 daemon 管理"></a>早期 Linux 使用 init 对 daemon 管理</h3><p>系统核心第一支调用的程序是 init ，然后 init 去唤起所有的系统所需要的服务。</p>
+<p>比如 MySQL 服务，可以用下面 2 种方式来启动服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo /etc/init.d/apache2 start</span><br><span class="line">$ service apache2 start</span><br></pre></td></tr></table></figure>
+
+<p>这 2 种方式有下面的缺点：</p>
+<ul>
+<li>启动时间长：init 进程是串行启动，只有前一个进程启动完，才会启动下一个进程。</li>
+<li>启动脚本复杂：init 进程只是执行启动脚本，不管其他事情。脚本需要自己处理各种情况，这往往使得脚本变得很长。</li>
+</ul>
+<h3 id="systemd-对-daemon-的管理"><a href="#systemd-对-daemon-的管理" class="headerlink" title="systemd 对 daemon 的管理"></a>systemd 对 daemon 的管理</h3><p><strong>systemd 的好处</strong>：</p>
+<ul>
+<li>平行处理所有服务，加速开机流程。</li>
+<li>一经要求就回应的 on-demand 启动方式： systemd 使用主命令 systemctl 来处理，基本无须其他额外的指令来支持。</li>
+<li>服务依赖性的自动检查： 由于 systemd 可以自动进行服务依赖性的检查，因此如果 B 服务必须在在 A 服务启动后启动，那当你在没有启动 A 服务的情况下仅手动启动 B 服务时， systemd 会自动帮你启动 A 服务。</li>
+<li><strong>按照 daemon 功能分类</strong>：systemd 管理的服务非常多，首先 systemd 将所有的服务定义为**服务单元 (Unit)**，并将各个 Unit 归类到不同的类型 (type) 中去。旧的 init 仅分为 stand alone 与 super daemon，实在不够看，systemd 将 Unit 区分为 service，socket，target，path，snapshot，timer 等多种不同的类型， 方便管理员的分类与记忆。</li>
+</ul>
+<p><strong>Unit 的分类（按照文件扩展名）：</strong></p>
+<ul>
+<li>service：一般服务类型：主要是系统服务，包括服务器本身所需要的本机服务以及网络服务都是，比较经常被使用到的服务大多是这种类型，所以，这也是最常见的类型了。</li>
+<li>.target：一组 Unit 的集合，也就是说， 选择执行 XXX.target 就是执行一堆其他 .service 之类的服务。</li>
+<li>.socket：内部程序数据交换的套接字服务：主要是 IPC (Inter-process communication) 的传输讯息套接字功能。一般用于本机服务比较多，例如我们的图形界面很多的软件都是通过 socket 来进行本机程序数据交换的行为。</li>
+<li>.mount .automount：文件系统挂载相关的服务 (automount unit / mount unit)：例如来自网络的自动挂载、NFS 文件系统挂载等与文件系统相关性较高的程序管理。</li>
+<li>.path：侦测特定文件或目录类型 (path unit)：某些服务需要侦测某些特定的目录来提供服务，例如最常见的打印服务，就是通过侦测打印伫列目录来启动打印功能，这时就得要 .path 的服务类型支持了。</li>
+<li>.timer：循环执行的服务 (timer unit)。</li>
+</ul>
+<p><strong>Unit 的操作</strong>：</p>
+<p>每个 Unit 都有一个配置文件，告诉 systemd 怎么启动这个 Unit，默认从 /etc/systemd/system/ 这个目录下读取配置文件，但是里面存放的大部分文件都是符号链接，指向其他地方的真正的配置文件。</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>列出正在运行的 Unit</td>
+<td>systemctl list-units</td>
+</tr>
+<tr>
+<td>列出所有 Unit，包括没有找到配置文件的或者启动失败的</td>
+<td>systemctl list-units –all</td>
+</tr>
+<tr>
+<td>列出所有正在运行的、类型为 service 的 Unit</td>
+<td>systemctl list-units –type=service</td>
+</tr>
+<tr>
+<td>显示单个 Unit 的状态</td>
+<td>systemctl status XXX.service</td>
+</tr>
+<tr>
+<td>启动一个服务</td>
+<td>sudo systemctl start XXX.service</td>
+</tr>
+<tr>
+<td>停止一个服务</td>
+<td>sudo systemctl stop XXX.service</td>
+</tr>
+<tr>
+<td>重启一个服务</td>
+<td>sudo systemctl restart XXX.service</td>
+</tr>
+<tr>
+<td>杀死一个服务的所有子进程</td>
+<td>sudo systemctl kill XXX.service</td>
+</tr>
+<tr>
+<td>重新加载一个服务的配置文件</td>
+<td>sudo systemctl reload XXX.service</td>
+</tr>
+<tr>
+<td>重载所有修改过的配置文件</td>
+<td>sudo systemctl daemon-reload</td>
+</tr>
+<tr>
+<td>在两个目录之间建立链接</td>
+<td>sudo systemctl enable XXX.service</td>
+</tr>
+<tr>
+<td>在两个目录之间撤销链接</td>
+<td>sudo systemctl disable XXX.service</td>
+</tr>
+<tr>
+<td>列出所有配置文件及其状态</td>
+<td>systemctl list-unit-files</td>
+</tr>
+</tbody></table>
+<p><strong>Unit 的 4 个状态</strong>：</p>
+<ul>
+<li>enabled：已建立启动链接。</li>
+<li>disabled：没建立启动链接。</li>
+<li>static：该配置文件没有 [Install] 部分（无法执行），只能作为其他配置文件的依赖。</li>
+<li>masked：该配置文件被禁止建立启动链接。</li>
+</ul>
+<p><strong>Unit 配置文件的内容解释</strong>：</p>
+<p>配置文件的内容一般分为几个区块：</p>
+<ol>
+<li>[Unit] 区块通常是配置文件的第一个区块，用来定义启动顺序和依赖关系，主要字段：<ul>
+<li>Description：简短描述。</li>
+<li>Documentation：文档地址。</li>
+<li>Requires：当前 Unit 依赖的其他 Unit，如果它们没有运行，当前 Unit 会启动失败。</li>
+<li>Before：如果该字段指定的 Unit 也要启动，那么必须在当前 Unit 之后启动。</li>
+<li>After：如果该字段指定的 Unit 也要启动，那么必须在当前 Unit 之前启动。</li>
+</ul>
+</li>
+<li>[Service] 区块通常只有 Service 类型的 Unit 才有，定义了如何启动当前服务，主要字段：<ul>
+<li>Type：定义启动时的进程行为，它有以下几种值：<ol>
+<li>simple 表示执行 ExecStart 指定的命令来启动主进程；</li>
+<li>forking 表示以 fork 方式从父进程创建子进程，创建后父进程会立即退出；</li>
+<li>idle 类似 simple，但是要等到其他任务都执行完，才会启动该服务。一种使用场合是为让该服务的输出不与其他服务的输出相混合。</li>
+</ol>
+</li>
+<li>ExecStart ：启动当前服务的命令。</li>
+<li>ExecStartPre：启动当前服务之前执行的命令。</li>
+<li>ExecStartPost：启动当前服务之后执行的命令。</li>
+<li>ExecReload：重启当前服务时执行的命令。</li>
+<li>ExecStop：停止当前服务时执行的命令。</li>
+<li>Environment：指定环境变量。</li>
+</ul>
+</li>
+<li>[Install] 通常是配置文件的最后一个区块，用来定义如何启动，以及是否开机启动。主要字段：<ul>
+<li>WantedBy：它的值是一个或多个 Target。当前 Unit 激活 (enable) 时符号链接会放入 /etc/systemd/system 目录下面以 Target 名 + .wants 后缀构成的子目录中。例如，WantedBy=multi-user.target 的含义是，该 Unit 所在的 target 是 multi-user.target。</li>
+<li>RequiredBy：它的值是一个或多个 Target，当前 Unit 激活时，符号链接会放入 /etc/systemd/system 目录下面以 Target 名 + .required 后缀构成的子目录中。</li>
+<li>Alias：当前 Unit 可用于启动的别名。</li>
+<li>Also：当前 Unit 激活 (enable) 时，会被同时激活的其他 Unit。</li>
+</ul>
+</li>
+</ol>
+<p><strong>Unit 配置文件的一个简易模板：</strong></p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Python Service</span><br><span class="line">After=multi-user.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">WorkingDirectory=/path</span><br><span class="line">User=root</span><br><span class="line">Type=idle</span><br><span class="line">ExecStart=/usr/bin/python3 /path/python.py</span><br><span class="line">Restart=always</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">birdkyle7918</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://birdkyle7918.com/2021/03/07/Linux 笔记整理/">https://birdkyle7918.com/2021/03/07/Linux 笔记整理/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://i.v2ex.co/82wYJ5ou.png"><div class="post-qr-code__desc">请我喝杯咖啡（支付宝）</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://i.v2ex.co/0qN35wEN.png"><div class="post-qr-code__desc">请我喝杯咖啡（微信）</div></div></div><div class="social-share pull-right" data-disabled="diandian,tencent,google,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/03/08/rclone%20%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"><i class="fa fa-chevron-left">  </i><span>rclone 使用说明</span></a></div><div class="next-post pull-right"><a href="/2021/03/04/MySQL%20%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/"><span>MySQL 笔记</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://birdkyle7918.com/2021/03/07/Linux%20%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/';
+  this.page.identifier = '2021/03/07/Linux 笔记整理/';
+  this.page.title = 'Linux 笔记';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'birdkyle7918' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://birdkyle7918.disqus.com/count.js" async></script></div></div><footer class="footer-bg" style="background-image: url(https://i.v2ex.co/p7DPQJSB.png)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By birdkyle7918</div><div class="framework-info"><span>Driven - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>

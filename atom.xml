@@ -6,7 +6,7 @@
   <link href="https://birdkyle7918.com/atom.xml" rel="self"/>
   
   <link href="https://birdkyle7918.com/"/>
-  <updated>2021-04-13T06:50:42.287Z</updated>
+  <updated>2021-04-30T08:33:26.757Z</updated>
   <id>https://birdkyle7918.com/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用 Maven 时遇到的一个小问题</title>
+    <link href="https://birdkyle7918.com/2021/04/30/%E4%BD%BF%E7%94%A8-Maven-%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    <id>https://birdkyle7918.com/2021/04/30/%E4%BD%BF%E7%94%A8-Maven-%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/</id>
+    <published>2021-04-30T08:15:05.000Z</published>
+    <updated>2021-04-30T08:33:26.757Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前在 MacOS 的命令行中使用 Maven 时，遇到 mvn compile 报错，说我的 $JAVA_HOME 环境变量没有正确设置：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The JAVA_HOME environment variable is not defined correctly</span><br><span class="line">This environment variable is needed to run this program</span><br><span class="line">NB: JAVA_HOME should point to a JDK not a JRE</span><br></pre></td></tr></table></figure><p>于是我打开了 .zshrc 文件，我的 $JAVA_HOME 是这样写的；</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=$(/usr/libexec/java_home)</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASS_PATH=$JAVA_HOME/lib</span><br></pre></td></tr></table></figure><p>之所以写成 <code>export JAVA_HOME=$(/usr/libexec/java_home)</code>，是因为我之前在网上查找如何设置 MacOS 的 $JAVA_HOME，看到了这么一段话：</p><blockquote><p>Many Java applications need to know the location of a $JAVA_HOME directory. The $JAVA_HOME on Mac OS X should be found using the /usr/libexec/java_home command line tool on Mac OS X 10.5 or later. On older Mac OS X versions where the tool does not exist, use the fixed path “/Library/Java/Home”. The /usr/libexec/java_home tool dynamically finds the top Java version specified in Java Preferences for the current user. This path allows access to the bin subdirectory where command line tools such as java, javac, etc. exist as on other platforms. The tool /usr/libexec/java_home allows you to specify a particular CPU architecture and Java platform version when locating a $JAVA_HOME.</p><p>Another advantage of dynamically finding this path, as opposed to hardcoding the fixed endpoint, is that it is updated when a new version of Java is downloaded via Software Update or installed with a newer version of Mac OS X. For this reason, it is important that developers do not install files in the JDKs inside of /System, since the changes will be lost with subsequent updates by newer versions of Java.</p><p>To obtain the path to the currently executing $JAVA_HOME, use the java.home System property.</p></blockquote><p>大意就是说，<code>/usr/libexec/java_home</code> 这个命令会直接找到本机上版本最新的 Java 的  $JAVA_HOME，所以我就直接这么写了，结果 Maven 却报错，说我写得不对。于是我直接输入命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> /usr/libexec/java_home</span></span><br></pre></td></tr></table></figure><p>得到的结果却是：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home</span><br></pre></td></tr></table></figure><p>问题在于，这个/Library/Internet Plug-Ins/目录的 Internet Plug-Ins 中间有一个空格，如果直接把这一串写进 .zshrc 文件的话，没有转义，所以导致路径不对。</p><p>至于为什么 Java 会安装在这个目录下呢，原来这是 MacOS 使用 .dmg 方式安装的 Java。我找到我另一个 Java 版本的 Home 目录，在 /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home 下，于是我把 $JAVA_HOME 改成该路径，问题就解决了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;之前在 MacOS 的命令行中使用 Maven 时，遇到 mvn compile 报错，说我的 $JAVA_HOME 环境变量没有正确设置：&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="https://birdkyle7918.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>记笔记的历程</title>
     <link href="https://birdkyle7918.com/2021/03/13/%E8%AE%B0%E7%AC%94%E8%AE%B0%E7%9A%84%E5%8E%86%E7%A8%8B/"/>
     <id>https://birdkyle7918.com/2021/03/13/%E8%AE%B0%E7%AC%94%E8%AE%B0%E7%9A%84%E5%8E%86%E7%A8%8B/</id>
     <published>2021-03-13T07:18:52.000Z</published>
-    <updated>2021-04-13T06:50:42.287Z</updated>
+    <updated>2021-04-30T08:33:44.594Z</updated>
     
     <content type="html"><![CDATA[<p>以前的我是个懒人，不喜欢记学习笔记，然而在我频繁想不起过去学过的东西后，我发觉，是时候改掉这个坏习惯了。以前没有自己的电脑，用本子记东西，过不了多长时间，就会找不到本子，里面记的内容也随之消失了，十分可惜。现在有电脑了，直接所有笔记都用电脑记，然后上传到云端，全部无纸化。</p><p>最开始啥也不懂，直接用记事本记纯文字，再后来发现了 Markdown，仿佛发现了新大陆一般。这玩意也太好用了，语法简单上手快，功能也多，代码行、图片、表格…… 可以直接渲染成网页，十分纯粹，看着就舒坦，于是我的笔记一律都使用 Markdown 来写了。</p><p>然后我开始寻找写 Markdown 的工具，就又发现了一个神器：<a href="https://typora.io/">Typora</a>。常规的 Markdown 编辑器一般是分两个屏，左边是 Markdown 源码，右边是渲染后的界面，或者干脆只能写源代码，要用浏览器打开才能看到渲染后的样子。而 Typora 与众不同的地方在于，当我写下 Markdown 源码时，显示出来的直接就是渲染后的页面，所写即所见，干净利落。</p><p>为了实现多地备份，我采取了一种策略：先在 GitHub 上建立一个笔记仓库，clone 到本地，然后在本地的仓库中记笔记，再定期 push 到远端。当时的我，每次都隔一段时间手动 push，然后还手动上传到 Google Drive 和 OneDrive，连写脚本自动上传都不会（菜+懒）。这个策略持续了一段时间。</p><p>后来，我买了一台 MacBook，一次偶然的机会在<a href="https://sspai.com/">少数派</a>上看到了关于 <a href="https://www.notion.so/">Notion</a>  的推荐，于是我就去尝试了这个 App，发现很有特色！贴近原生的 Markdown 语法，基于“方块”的编辑模式，还有其他功能，例如嵌入视频、ToDo 列表，Database 等，也都非常好用。最重点的是，学生凭借 edu 邮箱可以免费使用 professional 版本，真的很良心了。于是我从 Typora 编辑本地文件，改为了使用 Notion。</p><img src="https://raw.githubusercontent.com/birdkyle7918/img/main/notion.png" style="zoom:98%;box-shadow: 3px 3px 10px 10px rgba(0,0,0,.15)" /><p>然而，在与 Notion 度过了一段“蜜月期”之后，我逐渐发现了 Notion 的缺点：它是<strong>完全基于 Web 的</strong>，也就是我所写的东西，全部被上传至云端，并没有本地保存一份，当我查看时，需要请求服务器获取页面。虽然这样方便了个人跨平台访问内容和多人跨平台协作，但是也造成了问题，如果某篇笔记内容偏多，打开时就会加载很长时间，这个体验确实不太舒服。后来我又了解到，Notion 开发团队目前还在成长阶段中，而且服务器也时不时发生故障，造成很多人无法打开笔记，以及丢失笔记更新等诸多问题，具体见 <a href="https://twitter.com/NotionHQ">Notion 官方推特</a>。我不否认 Notion 是个很棒的产品，但由于我用不上 Notion 关于多人协作的功能（也许这才是精髓），发挥不了它的全部实力，再加上上述缺点，我最终还是放弃了它。</p><p>再之后，我又尝试了几个其他的笔记 App，比如<a href="https://yinxiang.com/">印象笔记</a>、<a href="https://logseq.com/">logseq</a>，都没有达到我心中的预期，兜兜转转，我又回到了 Typora。由于 <a href="github.com/rclone/rclone">rclone</a> 这个命令行工具让我很方便地将本地内容与云端同步，我制定了一个更好的策略，在本地写笔记，然后编写脚本，每隔 2 小时，就自动使用 rclone 将笔记上传至 Google Drive 和 OneDrive，当然，我的 iCloud 是自动上传的。这样，不需要我手动操作，就轻松达到了多地备份的目的。这个策略是我直到目前还在使用的，如果我之后想到或发现了更好的策略，也许我还会有所改变。如果有朋友看到了这篇文章，非常欢迎互相交流，关于如何记笔记以及保存笔记。当然，我知道我的文章很少人看…但我依然这样希望。</p><p>关于 rclone 的使用可以参考：[rclone 使用说明](<a href="https://birdkyle7918.github.io/2021/03/08/rclone">https://birdkyle7918.github.io/2021/03/08/rclone</a> 使用说明/)</p>]]></content>
     
@@ -34,7 +57,7 @@
     
     
     
-    <category term="想法" scheme="https://birdkyle7918.com/tags/%E6%83%B3%E6%B3%95/"/>
+    <category term="技术" scheme="https://birdkyle7918.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   

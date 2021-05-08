@@ -4,14 +4,21 @@
   <url>
     <loc>https://birdkyle7918.com/2021/03/13/%E8%AE%B0%E7%AC%94%E8%AE%B0%E7%9A%84%E5%8E%86%E7%A8%8B/</loc>
     
-    <lastmod>2021-04-30</lastmod>
+    <lastmod>2021-05-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://birdkyle7918.com/2021/03/08/rclone%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
+    
+    <lastmod>2021-05-08</lastmod>
     
   </url>
   
   <url>
     <loc>https://birdkyle7918.com/2021/04/30/%E4%BD%BF%E7%94%A8-Maven-%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/</loc>
     
-    <lastmod>2021-04-30</lastmod>
+    <lastmod>2021-05-07</lastmod>
     
   </url>
   
@@ -30,21 +37,7 @@
   </url>
   
   <url>
-    <loc>https://birdkyle7918.com/2021/03/04/MySQL%20%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</loc>
-    
-    <lastmod>2021-04-16</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://birdkyle7918.com/2021/02/03/%E5%91%A8%E6%9D%B0%E4%BC%A6/</loc>
-    
-    <lastmod>2021-04-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://birdkyle7918.com/2021/03/08/rclone%20%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
     
     <lastmod>2021-04-13</lastmod>
     
@@ -54,13 +47,6 @@
     <loc>https://birdkyle7918.com/404.html</loc>
     
     <lastmod>2021-04-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://birdkyle7918.com/2021/03/07/Linux%20%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</loc>
-    
-    <lastmod>2021-04-01</lastmod>
     
   </url>
   
@@ -95,7 +81,7 @@
 
   <url>
     <loc>https://birdkyle7918.com/</loc>
-    <lastmod>2021-05-07</lastmod>
+    <lastmod>2021-05-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -103,14 +89,14 @@
   
   <url>
     <loc>https://birdkyle7918.com/tags/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2021-05-07</lastmod>
+    <lastmod>2021-05-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://birdkyle7918.com/tags/%E6%83%B3%E6%B3%95/</loc>
-    <lastmod>2021-05-07</lastmod>
+    <lastmod>2021-05-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

@@ -6,7 +6,7 @@
   <link href="https://birdkyle7918.com/atom.xml" rel="self"/>
   
   <link href="https://birdkyle7918.com/"/>
-  <updated>2021-05-30T06:55:49.657Z</updated>
+  <updated>2021-05-30T06:59:42.860Z</updated>
   <id>https://birdkyle7918.com/</id>
   
   <author>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>DNS被抢答</title>
-    <link href="https://birdkyle7918.com/2021/05/30/%E2%80%9C%E5%81%87%E7%9A%84%E2%80%9DDNS%E6%9F%A5%E8%AF%A2/"/>
-    <id>https://birdkyle7918.com/2021/05/30/%E2%80%9C%E5%81%87%E7%9A%84%E2%80%9DDNS%E6%9F%A5%E8%AF%A2/</id>
+    <link href="https://birdkyle7918.com/2021/05/30/DNS%E8%A2%AB%E6%8A%A2%E7%AD%94/"/>
+    <id>https://birdkyle7918.com/2021/05/30/DNS%E8%A2%AB%E6%8A%A2%E7%AD%94/</id>
     <published>2021-05-30T06:17:09.000Z</published>
-    <updated>2021-05-30T06:55:49.657Z</updated>
+    <updated>2021-05-30T06:59:42.860Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h3><p>最近在研究 DNS 解析，学习了 nslook 命令和 dig 命令。在我尝试查询 DNS 解析结果时，发现了一个问题：当我查询未被墙的域名时，每次查询到的结果都是一样的（不管 A 记录有几个 IP，每次均一样）；但是当我查询已被墙的域名时，每次的结果都不一样，且都是错误的 IP。</p><p>最开始，我对这个结果并不意外，因为当我输入 <code>nslook twitter.com</code> 时，默认使用的是墙内的 DNS 服务器，它自然会给我一个错误的 IP，毕竟这是 GFW 的手段之一。但是当我在命令中加上特定的 DNS 服务器时，比如 <code>nslook twitter.com 8.8.8.8</code>，被墙域名的查询结果依然是每次不一样的错误 IP，如图所示：</p><img src="https://i.loli.net/2021/05/30/RWhkFp4ECbYwrOd.png" alt="每次DNS查询结果都不一样.png" style="zoom:50%;" /><p>这就让我陷入了困惑，难道命令中的 8.8.8.8（Google DNS）不起作用？又或者是 Google DNS 仍然返回给我错误的 IP？更加奇怪的是，我输入一个不存在的 DNS 服务器，我依然会得到查询结果？？？？？</p><img src="https://i.loli.net/2021/05/30/z4s9HaAjX83KqlZ.png" alt="不存在的DNS服务器.png" style="zoom:50%;" /><h3 id="抓包分析"><a href="#抓包分析" class="headerlink" title="抓包分析"></a>抓包分析</h3><p>于是我用 Wireshark 抓包分析，果然发现了问题。我的一次 DNS 查询，竟然会得到 3 个返回结果！前两个经过验证均为错误的，只有最后一个是正确的：</p><p><img src="https://i.loli.net/2021/05/30/JwC2Sfgd1NztGik.png" alt="假的DNS查询1.png"></p><p>如果是向不存在的 DNS 服务器（5.5.5.5）查询，那么得到的全是错误的结果：</p><p><img src="https://i.loli.net/2021/05/30/6VN1yet8qzn3Rxk.png" alt="假的DNS查询2.png"></p><p>这说明我得到的 DNS 查询结果被做了手脚，Google 一番后，我知道了这叫作 DNS 抢答（具体见 <a href="https://www.senrokumon.com/gfw-dns-hijacking/">这篇文章</a>），我的 DNS 查询被抢答了错误的答案！</p><h3 id="在云服务器上测试"><a href="#在云服务器上测试" class="headerlink" title="在云服务器上测试"></a>在云服务器上测试</h3><p>我在一台香港的服务器上做了同样的测试，结果查询结果均为正确的，不会出现被抢答的情况。GFW，可真有你的！</p><p><img src="https://i.loli.net/2021/05/30/Q9vORaWty2MeSUX.png" alt="正常的DNS查询.png"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h3><p>最近在研究 DNS 解析，学习了 nslook 命令和 dig 命令。在我尝试查询 DNS 解析结果时，发现了一个问题：当我查询未被墙的域名时，每次查询到的结果都是一样的（无论有几个 A 记录）；但是当我查询已被墙的域名时，每次的结果都不一样，且都是错误的 IP。</p><p>最开始，我对这个结果并不意外，因为当我输入 <code>nslook twitter.com</code> 时，默认使用的是墙内的 DNS 服务器，它自然会给我一个错误的 IP，毕竟这是 GFW 的手段之一。但是当我在命令中加上特定的 DNS 服务器时，比如 <code>nslook twitter.com 8.8.8.8</code>，被墙域名的查询结果依然是每次不一样的错误 IP，如图所示：</p><img src="https://i.loli.net/2021/05/30/RWhkFp4ECbYwrOd.png" style="zoom:50%;" /><p>这就让我陷入了困惑，难道命令中的 8.8.8.8（Google DNS）不起作用？又或者是 Google DNS 仍然返回给我错误的 IP？更加奇怪的是，我输入一个不存在的 DNS 服务器，我依然会得到查询结果？？？？？</p><img src="https://i.loli.net/2021/05/30/z4s9HaAjX83KqlZ.png" style="zoom:50%;" /><h3 id="抓包分析"><a href="#抓包分析" class="headerlink" title="抓包分析"></a>抓包分析</h3><p>于是我用 Wireshark 抓包分析，果然发现了问题。我的一次 DNS 查询，竟然会得到 3 个返回结果！前两个经过验证均为错误的，只有最后一个是正确的：</p><p><img src="https://i.loli.net/2021/05/30/JwC2Sfgd1NztGik.png"></p><p>如果是向不存在的 DNS 服务器（5.5.5.5）查询，那么得到的全是错误的结果：</p><p><img src="https://i.loli.net/2021/05/30/6VN1yet8qzn3Rxk.png"></p><p>这说明我得到的 DNS 查询结果被做了手脚，Google 一番后，我知道了这叫作 DNS 抢答（具体见 <a href="https://www.senrokumon.com/gfw-dns-hijacking/">这篇文章</a>），我的 DNS 查询被抢答了错误的答案！</p><h3 id="在云服务器上测试"><a href="#在云服务器上测试" class="headerlink" title="在云服务器上测试"></a>在云服务器上测试</h3><p>我在一台香港的服务器上做了同样的测试，结果查询结果均为正确的，不会出现被抢答的情况。GFW，可真有你的！</p><p><img src="https://i.loli.net/2021/05/30/Q9vORaWty2MeSUX.png"></p>]]></content>
     
     
       
@@ -38,12 +38,12 @@
   
   <entry>
     <title>DNS被抢答</title>
-    <link href="https://birdkyle7918.com/2021/05/30/DNS%E8%A2%AB%E6%8A%A2%E7%AD%94/"/>
-    <id>https://birdkyle7918.com/2021/05/30/DNS%E8%A2%AB%E6%8A%A2%E7%AD%94/</id>
+    <link href="https://birdkyle7918.com/2021/05/30/%E2%80%9C%E5%81%87%E7%9A%84%E2%80%9DDNS%E6%9F%A5%E8%AF%A2/"/>
+    <id>https://birdkyle7918.com/2021/05/30/%E2%80%9C%E5%81%87%E7%9A%84%E2%80%9DDNS%E6%9F%A5%E8%AF%A2/</id>
     <published>2021-05-30T06:17:09.000Z</published>
-    <updated>2021-05-30T06:59:42.860Z</updated>
+    <updated>2021-05-30T06:55:49.657Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h3><p>最近在研究 DNS 解析，学习了 nslook 命令和 dig 命令。在我尝试查询 DNS 解析结果时，发现了一个问题：当我查询未被墙的域名时，每次查询到的结果都是一样的（无论有几个 A 记录）；但是当我查询已被墙的域名时，每次的结果都不一样，且都是错误的 IP。</p><p>最开始，我对这个结果并不意外，因为当我输入 <code>nslook twitter.com</code> 时，默认使用的是墙内的 DNS 服务器，它自然会给我一个错误的 IP，毕竟这是 GFW 的手段之一。但是当我在命令中加上特定的 DNS 服务器时，比如 <code>nslook twitter.com 8.8.8.8</code>，被墙域名的查询结果依然是每次不一样的错误 IP，如图所示：</p><img src="https://i.loli.net/2021/05/30/RWhkFp4ECbYwrOd.png" style="zoom:50%;" /><p>这就让我陷入了困惑，难道命令中的 8.8.8.8（Google DNS）不起作用？又或者是 Google DNS 仍然返回给我错误的 IP？更加奇怪的是，我输入一个不存在的 DNS 服务器，我依然会得到查询结果？？？？？</p><img src="https://i.loli.net/2021/05/30/z4s9HaAjX83KqlZ.png" style="zoom:50%;" /><h3 id="抓包分析"><a href="#抓包分析" class="headerlink" title="抓包分析"></a>抓包分析</h3><p>于是我用 Wireshark 抓包分析，果然发现了问题。我的一次 DNS 查询，竟然会得到 3 个返回结果！前两个经过验证均为错误的，只有最后一个是正确的：</p><p><img src="https://i.loli.net/2021/05/30/JwC2Sfgd1NztGik.png"></p><p>如果是向不存在的 DNS 服务器（5.5.5.5）查询，那么得到的全是错误的结果：</p><p><img src="https://i.loli.net/2021/05/30/6VN1yet8qzn3Rxk.png"></p><p>这说明我得到的 DNS 查询结果被做了手脚，Google 一番后，我知道了这叫作 DNS 抢答（具体见 <a href="https://www.senrokumon.com/gfw-dns-hijacking/">这篇文章</a>），我的 DNS 查询被抢答了错误的答案！</p><h3 id="在云服务器上测试"><a href="#在云服务器上测试" class="headerlink" title="在云服务器上测试"></a>在云服务器上测试</h3><p>我在一台香港的服务器上做了同样的测试，结果查询结果均为正确的，不会出现被抢答的情况。GFW，可真有你的！</p><p><img src="https://i.loli.net/2021/05/30/Q9vORaWty2MeSUX.png"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h3><p>最近在研究 DNS 解析，学习了 nslook 命令和 dig 命令。在我尝试查询 DNS 解析结果时，发现了一个问题：当我查询未被墙的域名时，每次查询到的结果都是一样的（不管 A 记录有几个 IP，每次均一样）；但是当我查询已被墙的域名时，每次的结果都不一样，且都是错误的 IP。</p><p>最开始，我对这个结果并不意外，因为当我输入 <code>nslook twitter.com</code> 时，默认使用的是墙内的 DNS 服务器，它自然会给我一个错误的 IP，毕竟这是 GFW 的手段之一。但是当我在命令中加上特定的 DNS 服务器时，比如 <code>nslook twitter.com 8.8.8.8</code>，被墙域名的查询结果依然是每次不一样的错误 IP，如图所示：</p><img src="https://i.loli.net/2021/05/30/RWhkFp4ECbYwrOd.png" alt="每次DNS查询结果都不一样.png" style="zoom:50%;" /><p>这就让我陷入了困惑，难道命令中的 8.8.8.8（Google DNS）不起作用？又或者是 Google DNS 仍然返回给我错误的 IP？更加奇怪的是，我输入一个不存在的 DNS 服务器，我依然会得到查询结果？？？？？</p><img src="https://i.loli.net/2021/05/30/z4s9HaAjX83KqlZ.png" alt="不存在的DNS服务器.png" style="zoom:50%;" /><h3 id="抓包分析"><a href="#抓包分析" class="headerlink" title="抓包分析"></a>抓包分析</h3><p>于是我用 Wireshark 抓包分析，果然发现了问题。我的一次 DNS 查询，竟然会得到 3 个返回结果！前两个经过验证均为错误的，只有最后一个是正确的：</p><p><img src="https://i.loli.net/2021/05/30/JwC2Sfgd1NztGik.png" alt="假的DNS查询1.png"></p><p>如果是向不存在的 DNS 服务器（5.5.5.5）查询，那么得到的全是错误的结果：</p><p><img src="https://i.loli.net/2021/05/30/6VN1yet8qzn3Rxk.png" alt="假的DNS查询2.png"></p><p>这说明我得到的 DNS 查询结果被做了手脚，Google 一番后，我知道了这叫作 DNS 抢答（具体见 <a href="https://www.senrokumon.com/gfw-dns-hijacking/">这篇文章</a>），我的 DNS 查询被抢答了错误的答案！</p><h3 id="在云服务器上测试"><a href="#在云服务器上测试" class="headerlink" title="在云服务器上测试"></a>在云服务器上测试</h3><p>我在一台香港的服务器上做了同样的测试，结果查询结果均为正确的，不会出现被抢答的情况。GFW，可真有你的！</p><p><img src="https://i.loli.net/2021/05/30/Q9vORaWty2MeSUX.png" alt="正常的DNS查询.png"></p>]]></content>
     
     
       

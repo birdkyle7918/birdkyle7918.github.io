@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>birdkyle7918</title>
+  
+  <subtitle>技术&amp;随想</subtitle>
+  <link href="https://birdkyle7918.com/atom.xml" rel="self"/>
+  
+  <link href="https://birdkyle7918.com/"/>
+  <updated>2024-12-21T10:34:56.476Z</updated>
+  <id>https://birdkyle7918.com/</id>
+  
+  <author>
+    <name>birdkyle7918</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2024年</title>
+    <link href="https://birdkyle7918.com/2024/12/21/2024%E5%B9%B4/"/>
+    <id>https://birdkyle7918.com/2024/12/21/2024%E5%B9%B4/</id>
+    <published>2024-12-21T10:33:54.000Z</published>
+    <updated>2024-12-21T10:34:56.476Z</updated>
+    
+    <content type="html"><![CDATA[<p>写在这里：</p><p><a href="https://telegra.ph/My-2024-12-14/deletethis">https://telegra.ph/My-2024-12-14/deletethis</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;写在这里：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://telegra.ph/My-2024-12-14/deletethis&quot;&gt;https://telegra.ph/My-2024-12-14/deletethis&lt;/a&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随想0410</title>
+    <link href="https://birdkyle7918.com/2024/04/10/%E9%9A%8F%E6%83%B30410/"/>
+    <id>https://birdkyle7918.com/2024/04/10/%E9%9A%8F%E6%83%B30410/</id>
+    <published>2024-04-10T02:54:48.000Z</published>
+    <updated>2024-04-10T03:23:56.428Z</updated>
+    
+    <content type="html"><![CDATA[<p>春节假期结束后，回来工作的这2个月里，工作的强度比较低，我的大部分时间都在摸鱼，偶尔有事了，杭州那边同事找我了，我再看看问题之类的。总的来说这一段日子还是很舒服的。（和去年这个时候相比）。</p><p>去年这时候正是焦头烂额的时候😣😣😣，最终也导致了我去年夏天的离职。</p><p>现在的我，白天实际的工作时间大约只有2个小时，只不过晚上偶尔要和杭州那边开会，一般是代码评审什么的，然后之前有个周末加了点班搞了下前端界面。</p><p>昨天晚上和杭州一个同事闲聊，他说他觉得我跟着保障金项目组还是挺累的，说我很辛苦，他们那边都有点不好意思了。（我当时内心想法：？？？😝） </p><p>我在长沙这里已经闲得慌，摸鱼摸到飞了，那边居然觉得我这段时间比较辛苦，仅仅是因为我周末加了个班以及晚上和他们开了几次会。</p><p>这让我明白，我们这种线上联络办公的方式，让我们之间有比较大的gap，他们不知道我准确的工作状态，我也不知道他们的，哈哈哈。</p><p>有好处也有坏处吧，好处就是上面说的，我闲得慌他们却觉得我很辛苦。坏处就是，有的时候具体的工作细节很难沟通，尤其是当逻辑复杂度高的时候。</p><p>总的来说还不错。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;春节假期结束后，回来工作的这2个月里，工作的强度比较低，我的大部分时间都在摸鱼，偶尔有事了，杭州那边同事找我了，我再看看问题之类的。总的来说这一段日子还是很舒服的。（和去年这个时候相比）。&lt;/p&gt;
+&lt;p&gt;去年这时候正是焦头烂额的时候😣😣😣，最终也导致了我去年夏天的离职</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作随想0319</title>
+    <link href="https://birdkyle7918.com/2024/03/19/%E5%B7%A5%E4%BD%9C%E9%9A%8F%E6%83%B30319/"/>
+    <id>https://birdkyle7918.com/2024/03/19/%E5%B7%A5%E4%BD%9C%E9%9A%8F%E6%83%B30319/</id>
+    <published>2024-03-19T12:52:39.000Z</published>
+    <updated>2024-03-24T13:39:41.177Z</updated>
+    
+    <content type="html"><![CDATA[<p>上周，组长言覃带着几个业务线领头人，还有部门领导战尘来长沙出差了。其他几位都是熟客了，来过好多次长沙了，重点在于战尘，这是我第一次当面见到他，上一次与他对话还是在去年秋天的转正答辩时的线上会议中。</p><p>他是个很厉害的人。沉稳又善谈。我记得在转正答辩时，在提问环节，他略微思考，就向我提了几个犀利的问题，角度非常钻，但是却又很深刻。我感到不太容易回答的同时，又感觉到他非同一般的功力。这种“功力”是直接的，突然的。当时我想：“此人确实非同一般”。</p><p>这次与他线下见面，交流了很多工作以外的东西，他同样也有独到的见解。他认真听完我说的话，对我表示认同，然后分享了他自己的想法。他的一些想法也让我也受益良多，他具备了一个好领导的许多要素。</p><p>与之相比，言覃显得稍弱了一些。根据我这半年多以来对他的了解，他是个技术大拿，非常重视技术本身，也以技术为豪，但是欠缺了一些其他的，更深层次的，更“人文”，更“文化”的一部分东西。我想这也是他和战尘的差距所在吧。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;上周，组长言覃带着几个业务线领头人，还有部门领导战尘来长沙出差了。其他几位都是熟客了，来过好多次长沙了，重点在于战尘，这是我第一次当面见到他，上一次与他对话还是在去年秋天的转正答辩时的线上会议中。&lt;/p&gt;
+&lt;p&gt;他是个很厉害的人。沉稳又善谈。我记得在转正答辩时，在提问环节，</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2023年</title>
+    <link href="https://birdkyle7918.com/2024/01/01/2023%E5%B9%B4/"/>
+    <id>https://birdkyle7918.com/2024/01/01/2023%E5%B9%B4/</id>
+    <published>2024-01-01T14:36:14.000Z</published>
+    <updated>2024-03-21T12:31:00.809Z</updated>
+    
+    <content type="html"><![CDATA[<p>写在这里</p><p><a href="https://telegra.ph/My-2023-02-10/deleteThis">https://telegra.ph/My-2023-02-10/deleteThis</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;写在这里&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://telegra.ph/My-2023-02-10/deleteThis&quot;&gt;https://telegra.ph/My-2023-02-10/deleteThis&lt;/a&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>好难</title>
+    <link href="https://birdkyle7918.com/2023/12/17/%E5%A5%BD%E9%9A%BE/"/>
+    <id>https://birdkyle7918.com/2023/12/17/%E5%A5%BD%E9%9A%BE/</id>
+    <published>2023-12-17T04:06:58.000Z</published>
+    <updated>2024-03-24T13:50:10.486Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://telegra.ph/Too-Hard-03-17/deleteThis">https://telegra.ph/Too-Hard-03-17/deleteThis</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://telegra.ph/Too-Hard-03-17/deleteThis&quot;&gt;https://telegra.ph/Too-Hard-03-17/deleteThis&lt;/a&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>要换工作了</title>
+    <link href="https://birdkyle7918.com/2023/05/06/%E8%A6%81%E6%8D%A2%E5%B7%A5%E4%BD%9C%E4%BA%86/"/>
+    <id>https://birdkyle7918.com/2023/05/06/%E8%A6%81%E6%8D%A2%E5%B7%A5%E4%BD%9C%E4%BA%86/</id>
+    <published>2023-05-06T03:22:17.000Z</published>
+    <updated>2024-03-19T13:13:07.741Z</updated>
+    
+    <content type="html"><![CDATA[<p>在三一集团工作了 1 年 10 个月后，我要离开三一了。</p><p>老实说，2023 年春节后以来的这段时间，我在工作上非常痛苦，原因是我卷入了一个“混沌”的项目中，以及我慢慢看清了三一这家企业的办事风格本质，以及越来越不适应它。最终，我选择骑驴找马，在找到后，就提了离职。</p><p>在三一工作的这段时间，我深刻感受到，企业整体经营效益的好坏，是如何影响员工的切身利益。在我刚进入三一的那个时候，正值三一历史以来业绩最好的时候（我在 2021 年夏天入职，在 2019～2021 年这段时间内，三一的销售额、利润等，是自成立以来的历史最高水平），在那段时间内，三一的策略是激进地扩张：大量地招聘人员，大量地开启新项目，各个项目也都给到十分充足的预算，员工也过得比较舒服（至少在我自身看来，以及观察的身边同事），工作强度算不上紧绷，整个就是一派欣欣向荣的情景。</p><p>但是当时间进入到 2022 年下半年，情况就变了，而且很突然：三一的经营数据大幅下滑。之前就根据信息了解到，工程机械行业是典型的周期性行业，对于这类型的行业，在经历周期的上行和高潮后，大概率是周期的下行和低谷，但是我没想到是，周期的切换竟然如此迅速。三一内部的各种政策迅速紧缩：项目的预算减少，外包人员减少，紧接着就是年底的裁员…… 虽然我幸运地没有成为被裁的员工，但是和我同组且同为老乡的小伙伴，很不幸地被裁掉了……重点是，他是 2022 年夏天才入职的应届生，仅仅在三一工作了半年不到的时间……这件事情极大地震惊了我，在我看来，三一的这种做法实在太残忍，倘若是裁掉一个工作多年的老员工，老员工凭借较为丰富的工作经验也可以比较平滑地找到下一份工作，但是对于应届生来说，被裁后既丢失了应届生身份，凭借几乎为 0 的工作经验又很难找到下一份工作。这件事让我明白，在三一的那些大领导眼中，员工就只是工具而已，招之即来、挥之即去，当效益不好裁员时，不会有任何情面，三一是一家几乎没有人情味的公司，这一点也加强了我想离职的情绪。</p><p>三一整体的做事风格可以被精炼地总结为：砸钱+强压+领导文化。三一员工的整体薪资水平是远高于地区平均水准的，大部分员工也是看重这一点才入职的三一，毕竟有钱能使鬼推磨嘛，但是来了之后就会发现，钱可不是那么好赚的，要么得学会溜须拍马跪舔上级，要么必须有极强的抗压能力+能同时处理多项事情的极高效率+能忍受长时间的加班和领导的频繁 PUA，否则作为员工是很难在三一长久地干下去的。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在三一集团工作了 1 年 10 个月后，我要离开三一了。&lt;/p&gt;
+&lt;p&gt;老实说，2023 年春节后以来的这段时间，我在工作上非常痛苦，原因是我卷入了一个“混沌”的项目中，以及我慢慢看清了三一这家企业的办事风格本质，以及越来越不适应它。最终，我选择骑驴找马，在找到后，就提了离</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>零零碎碎的随想（2022-01-15）</title>
+    <link href="https://birdkyle7918.com/2022/01/15/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8E%E7%9A%84%E9%9A%8F%E6%83%B3/"/>
+    <id>https://birdkyle7918.com/2022/01/15/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8E%E7%9A%84%E9%9A%8F%E6%83%B3/</id>
+    <published>2022-01-15T03:25:55.000Z</published>
+    <updated>2023-05-07T02:18:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>不知不觉就工作半年了，相比于四个月前，我对于工作的感受发生了很大的变化。随着项目的推进，我们系统的使用者逐渐多了起来，问题也多了起来，之前我总觉得自己做的工作是在内部“自嗨”，现在则完全没有这种感受了，我们做的系统实实在在有了很多受众，也实实在在帮助整个公司的开发团队提升了效率，我们引发的小小问题，也确实会影响到不少人，我们做的事情，的确对于公司是有很大价值的。这样看来，工作上的事情还是要不断学习，不断实践，才会不断有新的理解与体会，当时的我还是比较幼稚呀！</p><p>找到自己工作的价值和意义，算是一件好事，然而随着工作量的逐渐增多，我的下班时间也慢慢变晚了，之前晚上回家还有一段休整的时间可以练练琴，现在基本上只剩下洗漱的时间，就得上床睡觉了，长期下来，我逐渐也有些倦怠了，因为我觉得最近这段时间的工作时间确实有些长，略微超出了我能够接受的范围。对于加班这件事，还未参加工作时，我比较抵触，参加工作后，我发现加班是无法避免的。只要存在企业间的竞争，企业的员工就必定要加班，只要还在一个可以接受的范围内，我也觉得没什么（前提是有意义的加班，而不是为了加班而加班）。可是当超出了一定范围，不仅工作效率会严重下降，也会挤压掉空闲时间，让我没时间思考一些其他东西，也没时间锻炼和运动。不过我想目前阶段应该不会持续太久，根据老板的安排，后续会有更多的员工加入到我们中来分担工作，工作时间也能逐步回到合理范围里来。因此我也觉得，通勤时间短一些还是很重要的，如果大多数时间花费在了路上，那将会更大程度压缩空闲的时间，我庆幸刚工作的我能住在公司附近，能够走路上下班，后续即使搬家或者买房，我也希望我能尽量控制通勤时间。</p><p>程序开发这项工作，对眼睛的消耗还是比较大的，我能明显感受到我的眼睛更容易干涩了，这是一个不好的征兆，未来在工作间隙还是要多多闭眼休息才行呀。</p><p>有时候觉得自己挺骄傲的，本科毕业就进入了一个地区内的头部公司，尤其是当周围的人得知我的年龄这么小，向我投来惊讶的目光时，都让我更充满自信了。我才刚刚满 22 周岁，我的前途是光明的，加油啊。只不过当上班成为常态，有时难免会觉得无聊与乏味，生活还是要有新鲜感的，可是作为程序员，工作本身并不能带来太大的新鲜感。所以我开始了自学钢琴，毕竟从喜欢周杰伦开始，我就一直想学钢琴了，只可惜目前的我只能买一架普通的电子琴在出租屋里对着谱子自己练习，以后我有了自己的房子，一定要买一架好的真钢琴，嗯。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;不知不觉就工作半年了，相比于四个月前，我对于工作的感受发生了很大的变化。随着项目的推进，我们系统的使用者逐渐多了起来，问题也多了起来，之前我总觉得自己做的工作是在内部“自嗨”，现在则完全没有这种感受了，我们做的系统实实在在有了很多受众，也实实在在帮助整个公司的开发团队提升了</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作两个月了</title>
+    <link href="https://birdkyle7918.com/2021/09/21/%E5%B7%A5%E4%BD%9C%E4%B8%A4%E4%B8%AA%E6%9C%88%E4%BA%86/"/>
+    <id>https://birdkyle7918.com/2021/09/21/%E5%B7%A5%E4%BD%9C%E4%B8%A4%E4%B8%AA%E6%9C%88%E4%BA%86/</id>
+    <published>2021-09-21T14:34:38.000Z</published>
+    <updated>2023-05-07T02:18:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>工作两个月了，在这个中秋假期，就写一些东西吧。</p><p>我就职于一家大型制造业公司下的数字化相关部门，负责维护一个内部的“中台”系统，供公司里的其他开发者使用。该平台集成了 <a href="https://zh.wikipedia.org/wiki/DevOps">DevOps 流程</a>所需要的几乎所有功能。当其他人开发项目时，可以在我们的平台上进行需求发布 -&gt; 需求处理 -&gt; 敏捷开发 -&gt; 测试 -&gt; 部署上线，这样一整套完整的流程。</p><p>该平台的原型是从其他公司购买来的，我们做的事情就是在其基础上进行二次开发和维护，以适应自己公司的相关需求。作为内部系统，开发 deadline 相对宽松，需求的解决不是非常急切，加班也不多。另外，即使很偶然地出现了线上事故，造成的损失也相对较少，这些都算是好处。其他方面，比如薪资，工作条件等，也挺令我满意。</p><p>不过，由于该系统使用的人数很少（日活跃用户撑死也只有 500），所以对于并发的要求也不是很高，许多时候都是只求功能，不求性能。有时一想到自己负责开发的系统只有区区几百的内部人员在使用，甚至会觉得我们只是在自嗨……成就感没有很高。而且，我在熟悉了平台的整个开发流程和相关技术，成为了一个“熟练工”之后（这件事两个月完全可以做到），我无法接收到那些更复杂的业务需求以及更高并发的要求，也就是说，我无法进一步学习并且提高自己了，这算是做内部系统的一个劣势。这也让我有一些隐隐的忧虑，因为在制造业公司的程序员，我们做的事情就是做好软件，为了公司能提高各个环节的效率，降低成本，提升产能，创造更大的利润，总体的上限比较低。我也进一步体会到，大型公司分工之细致——每一个组，每一个人，都负责一小部分事情，然后合作起来，把大事情做好。目前的话，就只能把自己这颗螺丝钉做好了。</p><p>比较遗憾的一件事是，之前积累的很多知识，到了工作中才发现，实际用到的只有很少一部分，我想这也是分工细致所导致的，但转念一想，如果每一部分的知识都要用到的话，那就意味着一个人需要处理好几个方面的事情（例如同时要做前端、后端、测试、数据库调优、运维等），那样的话，工作又会变得很忙，可我不喜欢很忙……总之就是如此矛盾，有人说“大厂螺丝钉，小厂干杂活”，想了想，也许真就是这样。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;工作两个月了，在这个中秋假期，就写一些东西吧。&lt;/p&gt;
+&lt;p&gt;我就职于一家大型制造业公司下的数字化相关部门，负责维护一个内部的“中台”系统，供公司里的其他开发者使用。该平台集成了 &lt;a href=&quot;https://zh.wikipedia.org/wiki/DevOps&quot;&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>喜欢的博客</title>
+    <link href="https://birdkyle7918.com/2021/06/19/%E5%96%9C%E6%AC%A2%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://birdkyle7918.com/2021/06/19/%E5%96%9C%E6%AC%A2%E7%9A%84%E5%8D%9A%E5%AE%A2/</id>
+    <published>2021-06-19T02:40:20.000Z</published>
+    <updated>2021-06-21T04:48:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><a href="https://laike9m.com/blog/#-1">laike9m</a>：一个清华毕业的 Googler，还做了一档 Podcast 叫“捕蛇者说”</li><li><a href="https://coolshell.cn/">酷壳</a>：一个老程序员</li><li><a href="https://draveness.me/">面向信仰编程</a>：“为什么这么设计”系列，值得一看</li><li><a href="https://blog.skk.moe/">Sukka</a>：一个计算机网络大神</li><li><a href="https://jvns.ca/">Julia Evans</a>：很多基础知识，另外漫画很不错</li><li><a href="https://program-think.blogspot.com/">编程随想</a></li><li><a href="https://www.yinwang.org/">王垠</a></li><li><a href="https://jhuo.ca/">HuoJu’s Blog</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://laike9m.com/blog/#-1&quot;&gt;laike9m&lt;/a&gt;：一个清华毕业的 Googler，还做了一档 Podcast 叫“捕蛇者说”&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://coolshell.cn/&quot;&gt;酷</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="https://birdkyle7918.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大学-&gt;结束</title>
+    <link href="https://birdkyle7918.com/2021/06/02/%E5%A4%A7%E5%AD%A6-%E7%BB%93%E6%9D%9F/"/>
+    <id>https://birdkyle7918.com/2021/06/02/%E5%A4%A7%E5%AD%A6-%E7%BB%93%E6%9D%9F/</id>
+    <published>2021-06-02T08:28:44.000Z</published>
+    <updated>2023-05-07T02:18:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>写于 2021/06/02</p><p>昨天完成了毕业论文的查重，距离毕业就只剩下最后的答辩，我的本科时光终于要结束了。</p><p>为什么我要说“终于结束了”？因为回顾这四年的生活，我实在是觉得不满意，也不快乐。一方面是因为，我直到大学后期（大三下）才渐渐意识到过去做了很多错误的决定，浪费了很多宝贵的机会和时间；另一方面，大学教育让我失望，以及面对它时，我自己深深的无力。</p><p>下面这些文字，摘自<a href="https://survivesjtu.gitbook.io/survivesjtumanual/li-zhi-pian/huan-ying-lai-dao-shang-hai-jiao-tong-da-xue">《上海交通大学生存手册》</a>：</p><blockquote><p>各位同学们，在本书的开始，我不得不遗憾地告诉大家一个消息。国内绝大部分大学的本科教学，不是濒临崩溃，而是早已崩溃。在此，我无意争论是否复旦、中科大、或者清华、北大是否比我们崩溃的更少一些——这种争论是没有意义的。我只是看到了无数充满求知欲、激情、与年轻梦想的同学们，将要把自己的四年青春，充满希望与信任地交给大学来塑造。这使我心中非常不安。</p><p>在当今流水线式的教育体制下，我们就像廉价的零件一样被生产出来。因为数量巨大，没人会对每一个人的教学质量负责。</p><p>领导不会为你负责。对于一个争做世界一流大学的研究型学校，管好科研，管好实验室才是当务之急。相比之下，本科生教学显得无利可图。教授也不会为你负责。拉到足够的经费发表足够的论文，满足学院要求才是生存大计。要说管学生，也肯定先要管好自己实验室的硕士博士，而非那一百多人大课堂里的某个本科生。就算是科研任务不太重的一些任课教师，他们也不会为你负责——学不懂？那是因为你智力低，要么就是自己底下不用功。为什么跟你一个班上的某某某同学，人家就能懂？诚然，就算是老师上课说孟加拉语，一个班上也非常有可能冒出一两个翻翻书看看图就能学到八九不离十的同学（或者根本就是以前学过）。真正在课堂上口传心授的教学，其质量是不会有人过问的。教学评估会考察实验报告格式是否合格，出勤率是否够，但是绝对不会考察上百人的班上到底有几个听懂了的。</p><p>试想一下，每个学院每个系有成百上千的学生，每人有着不同的思想、不同的目标、不同的知识背景、不同的接受力，我们怎么可能去指望一个统一的“教学培养计划”强制应用在每个人头上的时候，能够产生效果？好比说食堂师傅炒一大锅菜给上千人吃，我敢说我分到的那盘，不是炒糊就肯定得夹生。</p></blockquote><p>这段话真是对本科教育的精确描述，与过去四年的我的体会一模一样，毕竟上海交通大学尚且如此，更不必说广大的其他高校了。老师对待教学的敷衍了事（只有少数很认真的老师），学校对学生的不关心和几乎不存在的有效监管，都让我对本科教育失望至极。</p><p>先说教学。</p><p>我在某一天想起高中班主任曾经对我们说，往届毕业的同学进入大学后，偶尔回到高中看望他，都会和他吐槽大学老师的教学实在糟糕，远没有高中老师负责和认真。当时我没当一回事，现在回想起来很后悔，要是我从大一开始就对“能在课堂里学到真正有用的知识”不抱任何期望，并且从一开始就积极了解行业+疯狂自学的话，我也不会在大学前期浪费那么多的时间。</p><p>在大学里，我的专业是计算机，虽然我大学之前从未接触过编程，但是学了一段时间后，我发现我对编程很感兴趣，与那些不喜欢自己专业甚至抵触自己专业的同学相比，在这一点上我算是很幸运了。然而大学里的专业课，不仅陈旧不堪，没有深度，还与实际应用完全脱节，这一点我也是直到大学后期才明白。作为计算机专业的必修课程，内容中竟然没有任何有关命令行的操作，Linux 也只是选修的内容之一，而且也是很浅很浅的皮毛知识，这让我感到不可思议；学习 Java 时，我们花了大量的时间去掌握 awt 包中的图形界面控件和相关操作，只因为最后的上机考试需要，而像 Spring 这样能真正投入生产的知名框架，竟然毫无涉及……</p><p>《上海交通大学生存手册》中说，某些课程的内容陈旧、多年不变，只是为了保住一些教师的饭碗，我算是真正体会了。可笑的是，我有一次与某位老师对话，提到了教学的内容实在太少也太浅，老师只是用“浅不浅倒另说，更重要的是 bla，bla……”之类的话术来转移话题。当我说我的课程设计项目想采用 Python 来写，她竟然问我：Python 有面向对象吗？</p><p>……</p><p>老师教学水平不行、上课敷衍暂且不说，更让人气愤的是，<strong>他们恨不得学生能把所有的东西全都自己学会，甚至还能反过来教老师</strong>，这一点尤其在做课程设计的时候体现出来。我见过答辩时，某个小组的课程设计做得不是很好，老师狠狠责骂他们，说学生这也做不好、那也做不好。可是课程设计期间，老师并没有提供任何实质性的指导与帮助，无非只是在课程设计开始时发了一个选题通知罢了，整个过程简而言之就是“你们自己去做，我也不指导，做好了是应该，做不好我就要骂你们”。我想很多学生肯定都想指着老师的鼻子回骂一句：“我全都会了，还要你老师干什么！”，只不过学生群体在面对老师时实在是太弱势了，因为老师决定着学生的成绩，而成绩又关系着几乎所有东西。我遇到过一个老师，仗着自己能决定学生这门课程的生死，仅仅因为一点点格式不符他意，毫不留情地给学生的作业零分，很多原本成绩靠前的同学都中招，而他给学生上课的方式，竟然是放往年他自己的教学录像……</p><p>诚然，大学里也不全是不认真和不负责的老师，我也遇到了几个十分负责的老师，跟着他们我确实学到了一些很有用的专业知识，我非常感激他们，只不过这样的老师太少，我一个手就可以数完。而那些念着 PPT 的、旷几节课不来的、上课完全不备课的老师，数不胜数。如果让我重新读大学四年，我会直接在前期就去外面实习，直接上手实践肯定能比课堂中学习到的知识多得多，整个本科四年，作用不过是让我拿个毕业证和学位证罢了。</p><p>除了教学，还有学校对学生的管理方面，也同样令我失望。</p><p>首先是班级。大学里的班主任就是一个挂名的存在，对本科生毫不上心，“班主任”只不过是他众多职务中最不关心的那个，这也印证了《上海交通大学生存手册》中的：</p><blockquote><p> 对于一个争做世界一流大学的研究型学校，管好科研，管好实验室才是当务之急。相比之下，本科生教学显得无利可图……要说管学生，也肯定先要管好自己实验室的硕士博士，而非那一百多人大课堂里的某个本科生。</p></blockquote><p>再加上我们学校采用的是大类招生，然后大二再分流的政策，这导致了班级的重组和班主任的更换，但是宿舍却没有更换，于是之后每个宿舍里都分散住着不同班级的人。所以只有大一班主任亲自来到过学生的宿舍里，看看同学们的学习和生活情况（毕竟大一时，同一个宿舍里都是同一个班的），之后，班主任从来没有来过，从来没有主动关心过每个同学的境况。辅导员也从来没有主动关心过学生的情况，不过这一点不算是导员的错，导员要管整个学院将近 400 人，肯定不可能全部兼顾，我只是想不通学校为什么不多设置几个导员。</p><p>学校通知学生重要事情的方式，大多也只是通过导员发布给班长，班长再发到班群，甚至就连最后的就业，导员和教师等都没有亲自的指导，只是通过一个大群发送各类招聘信息。在找工作这件事上，学生太需要前人的指导了，这能大大减少应届生踩的坑。而现实是，就拿我自己举例，只能够自己通过各招聘网站搜索面试经验，一个坑一个坑去踩。</p><p>总之，学校管理者根本就没有将<strong>整个学生群体</strong>动员起来，鼓动他们去做应该做的事（或者至少是他们喜欢的事）。这样的后果是，绝大部分学生处于一种无监管+无引导的情况，学生自身的发展完全只是依靠过去十几年的学习“惯性”以及周围环境的裹挟。</p><p>敷衍的教学，加上不存在的监管和引导，这让本科教育很难和学校标榜的所谓“培养专业人才”联想到一起。毕竟有人说，整个中国的教育，初衷就不是为了培养人才，而是配合考试和各种手段来筛选人，我们经常听到的创新思维、创新能力，根本没有在学校期间被有意地培养出来，而全民创新，更是痴人说梦。</p><p>有人说：“大学本来就是靠自学。”这里我想引用一则 <a href="https://twitter.com/changwei1006/status/1379083319564886016">推文</a> ：</p><blockquote><p>过分强调“大学就是靠自学，别指望老师教你”本身就是一种学术 PUA，或是大学老师的甩锅技能。我身边就有一些人深陷其中。 一个人拥有自学能力的前提是他处在“知道自己不知道”的境界，而进入这种境界需要的条件是：你获取前沿讯息的外界通道非常畅通，这种条件对于和我一样出生在小镇里的人是很难达到的。</p></blockquote><p>综上所述，大学问题如此多，如何破局？一位叫陈涤的高校老师在知乎写的 <a href="https://www.zhihu.com/question/374622403/answer/1038184519">回答</a> 提供了一些思路，大致是把大学里的科研和教学完全分开。这篇回答里还说出了其他很多我想说的话，值得一读。</p><p>我对自己的大学四年算不上满意，最后也只找了一份中规中矩的工作。大四上学期初找工作时，我也试过一些互联网大企业，但最终都没有通过面试，毕竟我没有实习经验，而自己在学校做过的项目，都太简单了，拿不出手，学校本身也不是计算机类强校，在招聘者眼中不够知名。</p><p>说到实习，我曾在大四上学期已经找好了学校附近的一个实习，但是正好赶上疫情，学校不允许学生频繁进出校园，偶尔出入都要报备学院审核，而实习必须要一周五天到岗，遂作罢。说来讽刺，学校只对学生做限制，但每天下午都有一批家长从校外进入学校，到幼儿园接送孩子（我们学校里有个幼儿园，猜测能给学校提供收益）。这样表面的防疫做法，让我对学校完全灰心，可是没有办法，毕竟在大学里，学生是最底层，也是最弱势的一个群体。</p><p>我最后没有去互联网企业，去了一家离家乡城市比较近的制造业公司。我不知道高校何时能解决存在的那些问题，反正我是不想在学校里再待下去了，我此时只想尽快逃离学校，去过自己的生活。也许我将来会后悔，可是，人不可能同时走很多条路，在我看来，其实不管选择了哪一条路，最后都会后悔。“悟以往之不谏，知来者之可追”，过去面试失败的互联网公司，让我发现了很多不足，我也在大学最后的这段时期持续地补足，尽可能地做到更专业，这是我对自己的要求。人生路还有很长，现今的环境也不是很好，我已经准备开始面对了，加油吧。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;写于 2021/06/02&lt;/p&gt;
+&lt;p&gt;昨天完成了毕业论文的查重，距离毕业就只剩下最后的答辩，我的本科时光终于要结束了。&lt;/p&gt;
+&lt;p&gt;为什么我要说“终于结束了”？因为回顾这四年的生活，我实在是觉得不满意，也不快乐。一方面是因为，我直到大学后期（大三下）才渐渐意识到过去做</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DNS被抢答</title>
+    <link href="https://birdkyle7918.com/2021/05/31/DNS%E8%A2%AB%E6%8A%A2%E7%AD%94/"/>
+    <id>https://birdkyle7918.com/2021/05/31/DNS%E8%A2%AB%E6%8A%A2%E7%AD%94/</id>
+    <published>2021-05-31T05:36:04.000Z</published>
+    <updated>2021-06-18T14:35:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h3><p>最近在研究 DNS 解析，学习了 nslookup 命令和 dig 命令。在我尝试查询 DNS 解析结果时，发现了一个问题：当我查询未被墙的域名时，每次查询到的结果都是一样的（无论有几个 A 记录）；但是当我查询已被墙的域名时，每次的结果都不一样，且都是错误的 IP。</p><p>最开始，我对这个结果并不意外，因为当我输入 <code>nslookup twitter.com</code> 时，默认使用的是墙内的 DNS 服务器，它自然会给我一个错误的 IP，毕竟这是 G/F/W 的手段之一。但是当我在命令中加上特定的 DNS 服务器时，比如 <code>nslookup twitter.com 8.8.8.8</code>，被墙域名的查询结果依然是每次不一样的错误 IP，如图所示：</p><img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/每次DNS查询结果都不一样.png?versionId=CAEQFhiBgMC67ve90BciIDNiNWE5NWUyYjE0YzQwYzc5OGI3NDhkZWI1MjBmZjE3" style="zoom:50%;" /><p>这就让我陷入了困惑，难道命令中的 8.8.8.8（Google DNS）不起作用？又或者是 Google DNS 仍然返回给我错误的 IP？更加奇怪的是，我输入一个不存在的 DNS 服务器，我依然会得到查询结果？？？？？</p><img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/不存在的DNS服务器.png?versionId=CAEQFhiBgMCL4Pi90BciIDc4NDAwNzBiN2EyNzQ3NDQ4M2Q2MjExNjkxZDYwN2Qy" style="zoom:50%;" /><h3 id="抓包分析"><a href="#抓包分析" class="headerlink" title="抓包分析"></a>抓包分析</h3><p>于是我用 Wireshark 抓包分析，果然发现了问题。我的一次 DNS 查询，竟然会得到 3 个返回结果！前两个经过验证均为错误的，只有最后一个是正确的：</p><img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/假的DNS查询1.png?versionId=CAEQFhiBgICUzvi90BciIGFjZTFmODUxOWFlZTQzOGNiMDc2NjRmNTBkMWRkYjRl" style="zoom:50%;" /><p>如果是向不存在的 DNS 服务器（5.5.5.5）查询，那么得到的全是错误的结果：</p><img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/假的DNS查询2.png?versionId=CAEQFhiBgICevfi90BciIDZhNGNjNzVlY2ZiZjQ2YmViZTQ2OWQ3MDlhMjY0Mjc4" style="zoom:50%;" /><p>这说明我得到的 DNS 查询结果被做了手脚，网络上搜索一番后，我知道了这叫作 DNS 抢答（可以参考 <a href="https://www.senrokumon.com/gfw-dns-hijacking/">这篇文章</a>），我的 DNS 查询被抢答了错误的答案！</p><h3 id="在云服务器上测试"><a href="#在云服务器上测试" class="headerlink" title="在云服务器上测试"></a>在云服务器上测试</h3><p>我在一台香港的 VPS 上做了同样的测试，结果查询结果均为正确的（以 facebook.com 为例），不会出现被抢答的情况。G/F/W，可真有你的！关于具体细节见 <a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BC%93%E5%AD%98%E6%B1%A1%E6%9F%93">维基百科</a>。</p><img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/正常的DNS查询.png?versionId=CAEQFhiBgIDmnf.90BciIGE5ZmUxNThmZjRhYTRlOGM5YzdkNzE4OTAzN2MyMzk1" style="zoom:50%;" />]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;问题发现&quot;&gt;&lt;a href=&quot;#问题发现&quot; class=&quot;headerlink&quot; title=&quot;问题发现&quot;&gt;&lt;/a&gt;问题发现&lt;/h3&gt;&lt;p&gt;最近在研究 DNS 解析，学习了 nslookup 命令和 dig 命令。在我尝试查询 DNS 解析结果时，发现了一个问题：</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="https://birdkyle7918.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Maven 时遇到的一个小问题</title>
+    <link href="https://birdkyle7918.com/2021/04/30/%E4%BD%BF%E7%94%A8-Maven-%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    <id>https://birdkyle7918.com/2021/04/30/%E4%BD%BF%E7%94%A8-Maven-%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/</id>
+    <published>2021-04-30T08:15:05.000Z</published>
+    <updated>2021-05-07T08:10:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前在 MacOS 的命令行中使用 Maven 时，遇到 mvn compile 报错，说我的 $JAVA_HOME 环境变量没有正确设置：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The JAVA_HOME environment variable is not defined correctly</span><br><span class="line">This environment variable is needed to run this program</span><br><span class="line">NB: JAVA_HOME should point to a JDK not a JRE</span><br></pre></td></tr></table></figure><p>于是我打开了 .zshrc 文件，我的 $JAVA_HOME 是这样写的；</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=$(/usr/libexec/java_home)</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASS_PATH=$JAVA_HOME/lib</span><br></pre></td></tr></table></figure><p>之所以写成 <code>export JAVA_HOME=$(/usr/libexec/java_home)</code>，是因为我之前在网上查找如何设置 MacOS 的 $JAVA_HOME，看到了这么一段话：</p><blockquote><p>Many Java applications need to know the location of a $JAVA_HOME directory. The $JAVA_HOME on Mac OS X should be found using the /usr/libexec/java_home command line tool on Mac OS X 10.5 or later. On older Mac OS X versions where the tool does not exist, use the fixed path “/Library/Java/Home”. The /usr/libexec/java_home tool dynamically finds the top Java version specified in Java Preferences for the current user. This path allows access to the bin subdirectory where command line tools such as java, javac, etc. exist as on other platforms. The tool /usr/libexec/java_home allows you to specify a particular CPU architecture and Java platform version when locating a $JAVA_HOME.</p><p>Another advantage of dynamically finding this path, as opposed to hardcoding the fixed endpoint, is that it is updated when a new version of Java is downloaded via Software Update or installed with a newer version of Mac OS X. For this reason, it is important that developers do not install files in the JDKs inside of /System, since the changes will be lost with subsequent updates by newer versions of Java.</p><p>To obtain the path to the currently executing $JAVA_HOME, use the java.home System property.</p></blockquote><p>大意就是说，<code>/usr/libexec/java_home</code> 这个命令会直接找到本机上版本最新的 Java 的  $JAVA_HOME，所以我就直接写成了上面 .zshrc 文件的样子，结果 Maven 却报错，说我写得不对。于是我直接输入命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> /usr/libexec/java_home</span></span><br></pre></td></tr></table></figure><p>得到的结果却是：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home</span><br></pre></td></tr></table></figure><p>问题在于，这个/Library/Internet Plug-Ins/目录的 Internet Plug-Ins 中间有一个空格，所以如果直接把这一串写进 .zshrc 文件的话，没有转义，就会导致路径不对。</p><p>至于为什么 Java 会安装在这个目录下呢，原来这是 MacOS 使用 .dmg 方式安装的 Java。我找到我另一个 Java 版本的 Home 目录，在 /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home 下，于是我把 $JAVA_HOME 改成该路径，问题就解决了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;之前在 MacOS 的命令行中使用 Maven 时，遇到 mvn compile 报错，说我的 $JAVA_HOME 环境变量没有正确设置：&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="https://birdkyle7918.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记笔记的历程</title>
+    <link href="https://birdkyle7918.com/2021/03/13/%E8%AE%B0%E7%AC%94%E8%AE%B0%E7%9A%84%E5%8E%86%E7%A8%8B/"/>
+    <id>https://birdkyle7918.com/2021/03/13/%E8%AE%B0%E7%AC%94%E8%AE%B0%E7%9A%84%E5%8E%86%E7%A8%8B/</id>
+    <published>2021-03-13T07:18:52.000Z</published>
+    <updated>2021-06-15T11:49:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="为什么记笔记"><a href="#为什么记笔记" class="headerlink" title="为什么记笔记"></a>为什么记笔记</h3><p>大学之前，我没有记笔记的习惯。一方面，在应试教育的影响下，所有学过的知识都会被老师重复再重复，不断加深印象，年少的我记忆力还足以应付记住这些知识；另一方面，我没有自己的电脑，再加上书本太多，用来记笔记的本子时常被我弄丢，丢了几次之后，索性就不记了，最多只有课本上稀稀拉拉的一些小笔记。</p><p>后来读大学了，学的东西越来越多，也越来越复杂。迫于常常遗忘，我在自己的电脑上，开始了记录笔记和整理笔记的历程。更重要的是，由于以前的教训，我的一个核心需求是：<strong>寻找一种永远不会让笔记丢失的方案。</strong></p><h3 id="初期"><a href="#初期" class="headerlink" title="初期"></a>初期</h3><p>最开始不会什么高大上的技巧，直接用微软的 Word 记笔记（相信有很多人和我一样吧），后来接触了 Github 才知道了 Markdown，契机是我曾有一次搜索：「README.md 是什么文件？」。</p><p>发现了 Markdown 的我就像发现了新大陆一样，快速把它学会了，因为它太好用了，语法简单上手快，功能也多，代码行、图片、表格…… 可以直接渲染成网页，十分纯粹又十分漂亮，看着就舒坦，于是我的笔记一律都改为使用 Markdown 来写了。</p><p>然后我开始寻找写 Markdown 的工具，就又发现了一个神器：<a href="https://typora.io/">Typora</a>。常规的 Markdown 编辑器一般是分两个屏，左边是 Markdown 源码，右边是渲染后的界面，或者干脆只能写源代码，要用浏览器打开才能看到渲染后的样子。而 Typora 与众不同的地方在于：当我写下 Markdown 源码时，显示出来的直接就是渲染后的页面，所写即所见，干净利落。</p><p>为了实现永不丢失的目的，我采取了一种多地备份策略：先在 GitHub 上建立一个笔记仓库，clone 到本地，然后在本地的仓库中记笔记，再定期 push 到远端。当时的我，每次都隔一段时间手动 push，然后还手动上传到 Google Drive 和 OneDrive，当时的我连写脚本自动上传都不会（菜+懒）。这个策略持续了一段时间。</p><h3 id="Notion-时期"><a href="#Notion-时期" class="headerlink" title="Notion 时期"></a>Notion 时期</h3><p>后来，我买了一台 MacBook，一次偶然的机会在 <a href="https://sspai.com/">少数派</a> 上看到了关于 <a href="https://www.notion.so/">Notion</a> 的推荐，于是我就去尝试了这个软件，发现很有特色！贴近原生的 Markdown 语法，基于“方块”的新颖编辑模式，还有其他功能，例如嵌入视频、ToDo 列表，Database 等，也都非常好用。最重点的是，学生凭借 edu 邮箱可以免费使用 professional 版本，真的十分良心。于是我把所有的笔记迁移到了 Notion。</p><img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/Notion.png"/><p>然而，在与 Notion 度过了一段“蜜月期”之后，我逐渐发现了 Notion 的缺点：它是<strong>完全基于 Web 的</strong>，也就是我所写的东西，全部被上传至云端，并没有本地保存一份，当我查看时，需要请求服务器获取页面。虽然这样方便了个人跨平台访问内容以及多人跨平台协作，但是也造成了问题：如果某篇笔记内容偏多，打开时就会加载很长时间，这个体验确实不太舒服。后来我又了解到，Notion 开发团队目前还在成长阶段中，而且服务器也时不时发生故障，造成很多人无法打开笔记，以及丢失笔记更新等诸多问题，具体见 <a href="https://twitter.com/NotionHQ">Notion 官方推特</a>。我不否认 Notion 是个很棒的产品，但由于我用不上 Notion 关于多人协作的功能（也许这才是精髓），发挥不了它的全部实力，再加上上述缺点，我最终还是放弃了它。</p><h3 id="继续试错以及目前方案"><a href="#继续试错以及目前方案" class="headerlink" title="继续试错以及目前方案"></a>继续试错以及目前方案</h3><p>再之后，我又尝试了几个其他的笔记应用，如 <a href="https://yinxiang.com/">印象笔记</a> 和 <a href="https://logseq.com/">logseq</a>，都没有达到我的预期，兜兜转转，我又回到了 Typora。后来我学习了 <a href="github.com/rclone/rclone">rclone</a> 这个命令行工具，它让我很方便地将本地内容与云端同步，于是我制定了一个更好的策略：在本地写 Markdown 笔记，然后编写脚本，每隔 2 小时，就自动使用 rclone 将笔记上传至 Google Drive 和 OneDrive，当然，我的 iCloud 是自动上传的。这样，不需要我手动操作，就轻松达到了多地备份的目的。这个策略是我直到目前还在使用的，算是一个简单又能满足我需求的方案。如果我之后想到或发现了更好的策略，也许我还会有所改变。</p><p>看到这篇文章的朋友，如果你也有记笔记的习惯，欢迎所有交流。关于 rclone 的使用可以参考我的另一篇文章：「<a href="https://birdkyle7918.com/2021/03/08/rclone-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">rclone 使用说明</a>」</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;为什么记笔记&quot;&gt;&lt;a href=&quot;#为什么记笔记&quot; class=&quot;headerlink&quot; title=&quot;为什么记笔记&quot;&gt;&lt;/a&gt;为什么记笔记&lt;/h3&gt;&lt;p&gt;大学之前，我没有记笔记的习惯。一方面，在应试教育的影响下，所有学过的知识都会被老师重复再重复，不断加深印象，</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="https://birdkyle7918.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>rclone 使用说明</title>
+    <link href="https://birdkyle7918.com/2021/03/08/rclone-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <id>https://birdkyle7918.com/2021/03/08/rclone-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</id>
+    <published>2021-03-08T14:22:20.000Z</published>
+    <updated>2021-06-13T02:49:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="为什么使用-rclone"><a href="#为什么使用-rclone" class="headerlink" title="为什么使用 rclone"></a>为什么使用 rclone</h3><p>我们使用网盘，一般是打开客户端，然后上传我们的文件或者文件夹，但是当我们的数据在本地更新了，网盘上却不会更新（据我所知 Dropbox 和 iCloud 可以做到同步更新），需要我们再次打开客户端上传一遍。能不能让本地文件实时（或者每间隔一段时间）同步上传到网盘呢？rclone 可以做到这一点。不仅如此，rclone 还可以让你使用命令行在不同网盘之间同步数据。</p><p>rclone 是一个命令行程序，支持 Windows、Linux、macOS 平台，用来与网盘进行数据同步，目前已支持的网盘种类非常多，包括 Google Drive、Dropbox、Microsoft One Drive 等等。</p><p><a href="https://github.com/rclone/rclone">在 GitHub 上查看</a> ｜ <a href="https://rclone.org/">rclone 官网</a></p><p>关于 rclone 的安装请查看 <a href="https://rclone.org/install/">安装教程</a>。</p><h3 id="与-Google-Drive-同步"><a href="#与-Google-Drive-同步" class="headerlink" title="与 Google Drive 同步"></a>与 Google Drive 同步</h3><p>首先是设置 Google API：</p><ol><li><p>访问 <a href="https://console.developers.google.com/">Google API 控制台</a>，并且使用 Google 账号登录；</p></li><li><p>选择一个项目 (project) 或新建一个项目；</p></li><li><p>在上方的 API 搜索框中键入 Google Drive 然后回车，找到搜索结果中的 Google Drive API：</p> <img src="https://i.v2ex.co/Q0GZQevT.png" style="zoom:60%;box-shadow: 3px 3px 10px 10px rgba(0,0,0,.15)" /><p> 进入后，点击启用；</p></li><li><p>如果此前没有配置过“同意屏幕”，那么点击左侧菜单中的“配置同意屏幕”，选择目标用户类型为<strong>外部</strong>，应用名称可以填入“rclone”，然后填入自己的邮箱，gmail 即可，点击保存创建，最后在创建好的同意屏幕中，把“发布状态”从“测试”切换为“<strong>发布</strong>”；</p></li><li><p>点击左侧菜单的“凭据”，点击屏幕上方的“+创建凭据”，选择“OAuth 客户端 ID”，应用类型选择“桌面应用”，点击创建，然后就会显示 OAuth 客户端的 <strong>clinet_id 以及 client_secret</strong>，这两样东西后面会用到。</p></li></ol><p>然后是添加网盘配置：</p><p>使用<code>rclone config</code>命令配置网盘，键入 n 来创建第一个网盘，取名叫 GD：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> rclone config</span></span><br><span class="line">No remotes found - make a new one</span><br><span class="line">n) New remote</span><br><span class="line">r) Rename remote</span><br><span class="line">c) Copy remote</span><br><span class="line">s) Set configuration password</span><br><span class="line">q) Quit config</span><br><span class="line"><span class="meta">n/r/c/s/q&gt;</span><span class="bash"> n</span></span><br><span class="line"><span class="meta">name&gt;</span><span class="bash"> GD</span></span><br></pre></td></tr></table></figure><p>然后选择网盘类型 (Storage)，键入 drive，</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Type of storage to configure.</span><br><span class="line">Enter a string value. Press Enter for the default (&quot;&quot;).</span><br><span class="line">Choose a number from below, or type in your own value</span><br><span class="line"> 1 / 1Fichier</span><br><span class="line">   \ &quot;fichier&quot;</span><br><span class="line"> 2 / Alias for an existing remote</span><br><span class="line">   \ &quot;alias&quot;</span><br><span class="line"> 3 / Amazon Drive</span><br><span class="line">   \ &quot;amazon cloud drive&quot;</span><br><span class="line">......</span><br><span class="line">15 / Google Drive</span><br><span class="line">   \ &quot;drive&quot;</span><br><span class="line">......</span><br><span class="line"><span class="meta">Storage&gt;</span><span class="bash"> drive</span></span><br></pre></td></tr></table></figure><p>键入之前获取的 clinet_id 以及 client_secret：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Google Application Client Id - leave blank normally.</span><br><span class="line"><span class="meta">client_id&gt;</span></span><br><span class="line"><span class="bash">Google Application Client Secret - leave blank normally.</span></span><br><span class="line"><span class="meta">client_secret&gt;</span></span><br></pre></td></tr></table></figure><p>scope 键入 1，root_folder_id 回车默认，service_account_file 回车默认，Edit advanced config 键入 n，Use auto config 键入 y。</p><p>然后在自动打开的网页中登录 Google 账号，给予 rclone 修改 Google Drive 的权限。至此，创建网盘配置就完成了！</p><p>现在，我们就可以使用命令行来同步我们的数据了，比如我们可以将本地目录 ~/Documents/MyData/ 中的内容推送到 GD 网盘的 MyData/ 中：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">rclone sync ~/Documents/MyData/ GD:MyData/</span></span><br></pre></td></tr></table></figure><h3 id="自动化上传文件"><a href="#自动化上传文件" class="headerlink" title="自动化上传文件"></a>自动化上传文件</h3><p>我们可以编写脚本，每间隔一段时间就上传文件，这样就实现了网盘与本地的实时同步。</p><p>比如我的自动上传脚本：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">while true</span><br><span class="line">do</span><br><span class="line">    sleep 3600</span><br><span class="line">    DATE=$(date +%Y%m%d)</span><br><span class="line">    rclone sync /Users/kyle/Documents/MyData/ GD:MyData_Backup/MyData_$&#123;DATE&#125;</span><br><span class="line">done</span><br></pre></td></tr></table></figure><p>这个脚本每间隔 1 个小时将本地文件同步到网盘中，文件夹的命名为“名字+日期”的形式，这样的话，网盘中每天会新增一个文件夹，用于保留历史备份。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;为什么使用-rclone&quot;&gt;&lt;a href=&quot;#为什么使用-rclone&quot; class=&quot;headerlink&quot; title=&quot;为什么使用 rclone&quot;&gt;&lt;/a&gt;为什么使用 rclone&lt;/h3&gt;&lt;p&gt;我们使用网盘，一般是打开客户端，然后上传我们的文件或者文件夹</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="https://birdkyle7918.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>回忆症</title>
+    <link href="https://birdkyle7918.com/2021/02/27/%E5%9B%9E%E5%BF%86%E7%97%87/"/>
+    <id>https://birdkyle7918.com/2021/02/27/%E5%9B%9E%E5%BF%86%E7%97%87/</id>
+    <published>2021-02-27T07:07:40.000Z</published>
+    <updated>2023-05-07T02:18:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>“念旧“一般是指“怀念过去，觉得过去比现在好“。我就是一个极其念旧的人。例如，我觉得初中比大学和高中好，而小学又比初中好，至于小学之前，那是最快乐的时光了。（至于我为什么没有觉得高中比大学好，这是因为高中实在是太累太枯燥了，我实在不愿回忆起）。我知道这么想非常幼稚，毕竟人总是要长大，何况我马上都要参加工作了，总要面对更复杂的事情，让自己快乐也会变得越来越难。但我总是走不出来，每隔一段时间，就会想：“要是能够回到过去该有多好啊，那时的我没有这么多不快乐和烦恼”。不知从哪听来的一句话，说：“只有两种人会非常念旧，一是老人，二是对当下不满意的人”，那我自然是属于后者了，毕竟自从高中以来，我就对自己的生活不满意了。刚上大学时，想着大学能让我的生活有很大改观，可以有更多快乐，然而现在都快毕业了，也并没有快乐很多，关于这些，我想用之后的更多文章去说。</p><p>我的念旧，不仅仅在于上面写的，而更在于：“我恨不得能记住经历过的每一件事”。比如，如果我看了一部电影，我就会想记住电影的所有情节，如果在之后的某一天，我偶尔回忆起这部电影，但无法回忆起电影中的每一个情节，我就会有一种莫名的懊恼感和失落感，会感觉到过去的我，花在观看这部电影上的时间，全都被“偷走”、或“挖走”了一样。即便我能记得看完电影后的感受，但只要我无法记得电影中的每一个情节，我就是会不舒服。相反，如果我能够回忆起来的话，我会十分满足。同样的感觉还会出现在很多其他事情上，我偶尔会写便签，记录当时生活的一些事情和小小感受，但当我某天回看自己以前写过的便签，看到某一条内容，我就会拼命回想我自己当时写这条便签的近期，都发生了一些什么事情，同样是恨不得回忆起所有的细节，如果无法回忆到，我也会十分失落。</p><p>我不知道我的这种心理从何而来，说不清道不明。我不知道这个“症状”要怎么才能好，我试过在无法回忆具体细节时告诉自己不要失落，开心一些，但没什么效果，过了一段时间，另一件过去的事我无法回忆起来，我依然会失落。也许都不能称之为“念旧”了，姑且称之为“回忆症”吧。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;“念旧“一般是指“怀念过去，觉得过去比现在好“。我就是一个极其念旧的人。例如，我觉得初中比大学和高中好，而小学又比初中好，至于小学之前，那是最快乐的时光了。（至于我为什么没有觉得高中比大学好，这是因为高中实在是太累太枯燥了，我实在不愿回忆起）。我知道这么想非常幼稚，毕竟人总</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于《你好，李焕英》，以及我的母亲</title>
+    <link href="https://birdkyle7918.com/2021/02/25/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%9D%8E%E7%84%95%E8%8B%B1%E3%80%8B%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%88%91%E7%9A%84%E6%AF%8D%E4%BA%B2/"/>
+    <id>https://birdkyle7918.com/2021/02/25/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%9D%8E%E7%84%95%E8%8B%B1%E3%80%8B%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%88%91%E7%9A%84%E6%AF%8D%E4%BA%B2/</id>
+    <published>2021-02-25T04:31:35.000Z</published>
+    <updated>2023-05-07T02:18:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于毕业后要去长沙入职，前段时间一个人去长沙逛了两天，顺便看了春节档口碑较好的影片《你好，李焕英》。</p><img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/你好李焕英.jpg?versionId=CAEQFhiBgMDF1va90BciIDQ5NWI1OWNiYzNhYjQ5YmJiNzBiMTc0N2U2NzBlNmRj" style="zoom:50%;" /><p>这部在豆瓣评分 8+ 的片子并没有太多地触动我，与多数人评价的“哭湿口罩”、“泪崩”相比，我并不觉得这片子“好哭”，甚至觉得如同春晚小品一样硬要煽情的尴尬，我并没有和电影剧情产生共情。</p><p>片中母亲李焕英的形象，于我而言，显得太“不真实”了，我不是认为像李焕英一样的母亲不存在，而是当我把李焕英的性格和对孩子的态度与我自己的母亲相比，差距很大。片中李焕英不止一次对女儿贾晓玲说：妈妈只希望你健康，快乐成长就行了。即使贾晓玲在高中毕业时伪造了录取通知书，并且让母亲李焕英在酒席上众多亲戚朋友面前“出丑”，李焕英却立刻就原谅了女儿，即使女儿极少让自己“开心”过，李焕英穿越回去后，也亦然决定要和贾晓玲的父亲结婚，生下贾晓玲……</p><p>我想，如果剧情里的事情发生在我身上，我的母亲对我的态度肯定截然不同。我从未否认过母亲对我的爱，母亲很爱我。只不过，我的母亲是一个典型的望子成龙式的母亲，她从未对我说过“只希望我健康、快乐”之类的话，因为她本来也不是这样想的。我的健康和快乐当然是母亲所希望的，但是她更多的是，希望我成功，确切地说，希望我超过更多人。从小，我母亲经常和我说的话就是：“儿子呀，你长大后究竟会有多大的出息呀”，我再长大了一些后，她就和我说：“儿子呀，以后要赚好多好多钱，给妈妈买大大的房子”，我十分理解母亲，她的童年经历了许多艰难，希望过上很好的生活，她把希望寄托在我。这些我都非常理解，只不过，我母亲的控制欲，以及偶尔的歇斯底里，实在让我难受。</p><p>小时候我是同龄人中很优秀的那个，给我的母亲争了足够多的光，让她在我同龄人的父母中足够有面子。在我家内部，表兄弟姐妹中，我也是最优秀的那个，让我的母亲在家庭内部也很有面子。电影中贾晓玲自述几乎没有让母亲开心过，相比起来，我让母亲开心的次数简直不要太多。然而，开心的时候归开心，当我有哪一次没有做好时（在以前就是考试没考好之类的事），她会十分歇斯底里，埋怨我，责备我，这让我十分难过。在小时候，我记得的情况下，她就不止一次对我说过：“我对你很失望”，甚至：“我对你彻底失望”此类的话语，而且是十分认真对我说的。能想象这些话语对小时候的我会留下怎样的印记吗？我心里会一遍一遍想：即使我已经让母亲如此开心，也如此光荣了，她还是对我失望，于是陷入深深的自责。但我从来没有因此反叛过母亲，没有对母亲生气过，从来没有。甚至她自己都说，别的孩子都有青春叛逆期，而我没有，这很让她高兴。同样地，还有很多事情，比如在她得知我不考研而直接去工作时，又歇斯底里地责备我，说我不考研就是“不思进取”的表现，因为这样让我“落后”了很多其他考研的同学。我依然没有怪她，也不会怪她，只是和她说，和她交谈，直到她平息。因为她是我的母亲，她养育了我，她爱我。</p><p>但在我的心里，不可能没有任何的改变，我还是与母亲在深层的关系上有所疏远了，我从最开始的和母亲无话不谈，到后来很多话不与她谈了。因为我有我自己的人生，我想摆脱母亲的这种“控制欲”。回到电影中，如果是我伪造了自己的录取通知书，这么重大的事件，恐怕即使母亲最终能原谅我，也少不了一顿暴戾的狂风暴雨吧，这也是我无法和这部片子共情的原因。</p><p>这部电影还是采用了一个略显老套的穿越+反转的叙事方式，对于已经免疫这种题材的我来说，有些减分。要说这部电影的优点，应该就是很真诚了，看得出来贾玲对母亲真诚的爱，以及对意外而故的母亲深深的怀念，只是我没有被触动而已，原因上面已经说了。总之，我也希望我的母亲在精神上对我更好一些，能有一些更多的理解与支持，对于像李焕英这样的母亲，我深深地羡慕。</p><p>发布于：2021-02-25</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;由于毕业后要去长沙入职，前段时间一个人去长沙逛了两天，顺便看了春节档口碑较好的影片《你好，李焕英》。&lt;/p&gt;
+&lt;img src=&quot;https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/你好李焕英.jpg?versionI</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>周杰伦</title>
+    <link href="https://birdkyle7918.com/2021/02/03/%E5%91%A8%E6%9D%B0%E4%BC%A6/"/>
+    <id>https://birdkyle7918.com/2021/02/03/%E5%91%A8%E6%9D%B0%E4%BC%A6/</id>
+    <published>2021-02-03T12:21:58.000Z</published>
+    <updated>2023-05-07T02:18:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/周杰伦全专辑.jpg?versionId=CAEQFhiBgID0yYC.0BciIGUyYWNkODNkOTdjNTQ2ZTlhNzhlYzVmN2RlNmJkYjhi" style="zoom: 67%;" /><p>严格来说，我是周杰伦的新粉，因为我从 2020 年初才<strong>真正彻底地</strong>崇拜上他，成为他的忠实粉丝。</p><p>读小学时就听过他的歌，当时没有自己的听歌设备（父母不给买，惨），没有 MP3，没有手机，听的歌几乎都是别人放的，或者大街上的 bgm。当年听过的不外乎是他最红的那些歌曲，例如《青花瓷》、《菊花台》、《发如雪》、《稻香》、《给我一首歌的时间》、《千里之外》……小时候也不懂欣赏音乐，感觉也仅限于：嗯，这些歌挺好听的，朗朗上口，周围也很多人会唱。</p><p>那时候周末有一两个小时玩电脑的时间，我有时也会自己搜歌听。印象比较深的是有一次，我在酷我音乐盒里搜索“周杰伦”，列表中的《爱在西元前》吸引了我，也许是因为这首歌的名字很新奇吧，我点击了播放，可听了一半却感觉一般，只觉得这歌很快，然后歌词里还有一些生疏的词语，如“美索不达米亚平原”、“底格里斯河”之类的。当时小学的我还没有学过历史，这首歌的风格也与我之前熟悉的歌曲截然不同，于是还没听完就切歌了。由于拥有电脑的时间十分短暂，之后的我也主要玩游戏了，很少自己搜歌听了。</p><p>之后的初中，许嵩很火，大家都喜欢许嵩，我也跟着一起听了三年的许嵩，嗯，确实好听。还有林俊杰，由于我的一个朋友是林俊杰的死忠粉，我又跟着一起听林俊杰了。虽然那时候没有自己的听歌设备，都是跟着别人，但是还是非常开心的呢，有什么好听的歌大家也会分享，歌也确实好听，不过这段时间里，周杰伦的声音却少了很多。</p><p>再后来的高中，我有了一个自己的 iPad，可以自己常常搜歌听了，在一次偶然间听到陈奕迅的《富士山下》后，我迷上了这个歌手，接着听了很多他的其它歌曲，并成为了他的粉丝。Eason 嗓音很厚、很有磁性，天生就适合唱歌，大家都叫他 E 神，再加上香港的两位顶尖填词人，林夕和黄伟文，为他写了很多非常棒的作品，所以我高中三年，加上后来的大学前两年，最喜欢的歌手一直是陈奕迅，为此我还模仿和学习粤语，就为了唱他的歌，哈哈。</p><p>时间到了 2020 年初，大三的寒假，我买了一个很喜欢的蓝牙耳机，于是出门都带上耳机听歌，有一次心血来潮，搜了一下周杰伦的所有专辑，然后从他第一张专辑的第一首歌，一首一首往后听，顿时，我打开了新世界的大门…</p><p>“哇，原来以前听到的一个旋律是他的这首歌啊”</p><p>“这首歌也太好听了，我怎么以前没听过啊”</p><p>“这前奏，绝了，这 Rap，绝了”</p><p>每听一首歌，就像拆开一个未知的礼物，我把周杰伦 2000～2010 的歌一遍又一遍反复听，听出了以前听不出的味道，听出了一个又一个惊喜，原来，这才是真正的周杰伦啊！小时候觉得一般的《爱在西元前》，现在也成了我的单曲循环。把爱情与古文明结合起来，从当时一众苦情歌中脱颖而出，方文山确实厉害，而杰伦的曲，是那么律动，那么有生命力。后来我就彻底崇拜上了周董，到现在几乎只听他的歌了。就像他当年说的：“我希望自己以后听到我现在写的歌，还是会觉得一样屌”。我觉得他做到了，几乎 20 年前的歌，放到现在还是如此流行。</p><p>周董的厉害之处，歌迷们已经吹过很多了，比如音乐风格多样，天马行空；歌曲主题多样，不局限于流行歌以往的情情爱爱，主题包括但不限于“爱情”、“环保”、“孝顺”、“反对家暴”、“反战”、“中国传统文化”；写歌速度极快，2000～2010 年间 ，除了 2009 年，每年都出了一张专辑，其他歌手很少有这样的写歌速度，这充分体现了周董的才华；开创了中国风+流行的先河，当年的《菊花台》、《青花瓷》等歌更是火爆大江南北，从小孩到老人，几乎所有年龄段的人都会唱。</p><p>除此之外，我想要说一些个人感受到的，周杰伦的一些其他的特质，包括音乐方面和个人方面。</p><p>对于音乐方面，我没有专业地学习过，我只能说出作为一个普通听众所感受到的一些东西：</p><ol><li>杰伦的很多音乐，前奏就足够抓耳。我发明了一个词，叫“渐进式前奏”，用来描述周董的歌曲。前奏的一开始，乐器很少，然后逐步加入乐器，慢慢丰富起来，创造一种“渐进”的层次感，如交响乐一般。典型代表如《霍元甲》、《龙拳》、《晴天》、《三年二班》；能达到这一点，除了杰伦本身的天赋以外，还要感谢几位顶级的编曲人给他的帮助：钟兴民、洪敬尧、林迈可等。</li><li>杰伦对于节奏的把控是顶级的，有一种魔力。如果抛开节拍看，杰伦有一些歌曲的旋律其实非常简单（一句里可以有很多重复的音），但是独特的断句就能让整个歌曲非常带感。典型代表如《爷爷泡的茶》、《乱舞春秋》、《稻香》。</li><li>杰伦的 Rap 不仅仅是单纯带断句的“说话”，而是偏“呢喃”的唱（后来我才知道这叫作 Melodic Rap，即“旋律说唱”），这样让句子有很多起伏，更重要的是，变化还很丰富。个人最喜欢的当属《夜的第七章》中的“脚步声预料的软皮鞋跟”段落，以及《手写的从前》中的“微风需要竹林”段落。</li><li>杰伦有一部分偏抒情类的歌曲，副歌比主歌更“平”一些，节奏更工整。典型代表如《开不了口》、《你听得到》。很多其他流行歌曲都是主歌铺垫情绪，相对平淡，副歌抒发情绪，更“激进”一些。而杰伦正好反其道而行之，主歌突出节奏性，副歌突出旋律性。这个特点或许就是很多人说的“杰伦味儿”吧，很有他自己的风格。</li><li>更多的以后想到了在再写…</li></ol><p>不得不说，听久了周杰伦的音乐之后，其他那些编曲简单，或者变化较少的歌曲顿时就黯然失色了。也是杰伦的音乐，无形中教会了我如何从整体欣赏音乐，以前听歌都是只关注人声部分（以前的设备不行，音质差是一方面原因），后来慢慢才发现，各种乐器之间的配合和编排，也倾注了创作者的许多心血，是一首作品之所以优秀的关键因素。</p><p>对周董音乐的研究与评价，推荐一个知乎答主 <a href="https://www.zhihu.com/people/xue-ling-dong-xiao-sheng">雪岭洞箫声Snowii</a>，对周董音乐的扒带，推荐一个 up 主 <a href="https://space.bilibili.com/25732134?from=search&seid=6789038052523990898">MiDi匠做MiDi</a>。</p><p>关于个人方面，周杰伦从草根到成名的经历真的是让任何人都羡慕。小时候努力学习钢琴打下基础，虽然没有考上很好的学校，但是参加节目被吴宗宪发掘，之后又有杨峻荣的推荐，再凭借自己的才华，一步步成为亚洲天王。更幸运的是，他还得到了一堆“大佬”的帮助，除了前面说的几位编曲人，还有就是最为人熟知的词人方文山、黄俊郎，早期还有徐若瑄倾力相助帮他完成了几首歌的填词。可以说是实力+幸运，成就了周杰伦这个传奇。</p><p>我成为杰伦铁粉的时间算是比较晚了，对此，我一方面惋惜自己当时年龄太小，不懂欣赏音乐，没有听出杰伦真正的才华，另一方面我“恨”自己为什么不早出生个五年十年的，如果我出生在 90 年代初，那么就可以在杰伦最火的时候成为他的粉丝，这会是多么幸福的事情。</p><p>杰伦的最后一张专辑是发行于 2016 年的《周杰伦的床边故事》，也是在他的女儿出生后制作的。后续杰伦只出过单曲了，也不知道什么时候才出专辑，这也是粉丝们天天催的事情。实话说，他有那么多的好歌，足够我来回反反复复听也不会腻，他也“老了”，迈过了 40 岁，是时候好好享受家庭的快乐了，不是当年那个满满冲劲的年轻人了，嗓音也大不如以前，作为歌迷希望他永远幸福就好吧。</p><p>现在已经是 2021 年，华语流行乐坛的巅峰时期也早已过去。当年盗版猖獗，好歌却层出不穷，可谓是“神仙打架”，如今群众的版权意识有所提升，相关法规也更健全，但是做音乐的人却越来越少了，好音乐越来越少了。究其原因，个人认为主要还是互联网的浪潮太过于迅猛，现今的娱乐方式太多了，单纯歌曲和专辑得到的关注度大大减少，做歌曲已经不赚钱了，再加上日益浮躁的风气，人人都想要快速获得更多的流量，愿意沉下心做音乐的人寥寥无几，就算做出来后，关注度也会被各种热度更高的“大瓜”压下去。</p><p>想起小时候的自己，每听到一首好听的歌，都要用笔记本写下来，想着以后有了自己的 MP3，就下载这些歌来听。而现在，我的歌单里，依然有大部分是当年记的歌，只是设备变成了智能手机罢了，小时候梦寐以求想拥有的 MP3，早已淘汰了。听歌越来越方便，却发现没什么新的好歌可听了，华语流行乐坛的巅峰也许再也不会有了，如周杰伦一般的现象级巨星，可能也不会有了，从前快乐的时光，再也回不去了。</p><p>发布于：2021-02-03</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;img src=&quot;https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/周杰伦全专辑.jpg?versionId=CAEQFhiBgID0yYC.0BciIGUyYWNkODNkOTdjNTQ2ZTlhNzhlYzVmN2R</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="https://birdkyle7918.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+</feed>

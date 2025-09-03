@@ -54,20 +54,20 @@ ga('send', 'pageview');</script><meta name="google-site-verification" content="U
 <p>我最后没有去互联网企业，去了一家离家乡城市比较近的制造业公司。我不知道高校何时能解决存在的那些问题，反正我是不想在学校里再待下去了，我此时只想尽快逃离学校，去过自己的生活。也许我将来会后悔，可是，人不可能同时走很多条路，在我看来，其实不管选择了哪一条路，最后都会后悔。“悟以往之不谏，知来者之可追”，过去面试失败的互联网公司，让我发现了很多不足，我也在大学最后的这段时期持续地补足，尽可能地做到更专业，这是我对自己的要求。人生路还有很长，现今的环境也不是很好，我已经准备开始面对了，加油吧。</p>
 </div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2021/05/31/DNS%E8%A2%AB%E6%8A%A2%E7%AD%94/">DNS被抢答</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-31</time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E6%8A%80%E6%9C%AF/">技术</a></span><div class="content"><h3 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h3><p>最近在研究 DNS 解析，学习了 nslookup 命令和 dig 命令。在我尝试查询 DNS 解析结果时，发现了一个问题：当我查询未被墙的域名时，每次查询到的结果都是一样的（无论有几个 A 记录）；但是当我查询已被墙的域名时，每次的结果都不一样，且都是错误的 IP。</p>
 <p>最开始，我对这个结果并不意外，因为当我输入 <code>nslookup twitter.com</code> 时，默认使用的是墙内的 DNS 服务器，它自然会给我一个错误的 IP，毕竟这是 G/F/W 的手段之一。但是当我在命令中加上特定的 DNS 服务器时，比如 <code>nslookup twitter.com 8.8.8.8</code>，被墙域名的查询结果依然是每次不一样的错误 IP，如图所示：</p>
-<img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/每次DNS查询结果都不一样.png?versionId=CAEQFhiBgMC67ve90BciIDNiNWE5NWUyYjE0YzQwYzc5OGI3NDhkZWI1MjBmZjE3" style="zoom:50%;" />
+<img src="https://img.birdkyle7918.com/rapid-answer-1.png" style="zoom:50%;" />
 
 <p>这就让我陷入了困惑，难道命令中的 8.8.8.8（Google DNS）不起作用？又或者是 Google DNS 仍然返回给我错误的 IP？更加奇怪的是，我输入一个不存在的 DNS 服务器，我依然会得到查询结果？？？？？</p>
-<img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/不存在的DNS服务器.png?versionId=CAEQFhiBgMCL4Pi90BciIDc4NDAwNzBiN2EyNzQ3NDQ4M2Q2MjExNjkxZDYwN2Qy" style="zoom:50%;" />
+<img src="https://img.birdkyle7918.com/rapid-answer-2.png" style="zoom:50%;" />
 
 <h3 id="抓包分析"><a href="#抓包分析" class="headerlink" title="抓包分析"></a>抓包分析</h3><p>于是我用 Wireshark 抓包分析，果然发现了问题。我的一次 DNS 查询，竟然会得到 3 个返回结果！前两个经过验证均为错误的，只有最后一个是正确的：</p>
-<img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/假的DNS查询1.png?versionId=CAEQFhiBgICUzvi90BciIGFjZTFmODUxOWFlZTQzOGNiMDc2NjRmNTBkMWRkYjRl" style="zoom:50%;" />
+<img src="https://img.birdkyle7918.com/rapid-answer-3.png" style="zoom:50%;" />
 
 <p>如果是向不存在的 DNS 服务器（5.5.5.5）查询，那么得到的全是错误的结果：</p>
-<img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/假的DNS查询2.png?versionId=CAEQFhiBgICevfi90BciIDZhNGNjNzVlY2ZiZjQ2YmViZTQ2OWQ3MDlhMjY0Mjc4" style="zoom:50%;" />
+<img src="https://img.birdkyle7918.com/rapid-answer-4.png" style="zoom:50%;" />
 
 <p>这说明我得到的 DNS 查询结果被做了手脚，网络上搜索一番后，我知道了这叫作 DNS 抢答（可以参考 <a target="_blank" rel="noopener" href="https://www.senrokumon.com/gfw-dns-hijacking/">这篇文章</a>），我的 DNS 查询被抢答了错误的答案！</p>
 <h3 id="在云服务器上测试"><a href="#在云服务器上测试" class="headerlink" title="在云服务器上测试"></a>在云服务器上测试</h3><p>我在一台香港的 VPS 上做了同样的测试，结果查询结果均为正确的（以 facebook.com 为例），不会出现被抢答的情况。G/F/W，可真有你的！关于具体细节见 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BC%93%E5%AD%98%E6%B1%A1%E6%9F%93">维基百科</a>。</p>
-<img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/正常的DNS查询.png?versionId=CAEQFhiBgIDmnf.90BciIGE5ZmUxNThmZjRhYTRlOGM5YzdkNzE4OTAzN2MyMzk1" style="zoom:50%;" />
+<img src="https://img.birdkyle7918.com/rapid-answer-5.png" style="zoom:50%;" />
 
 
 
@@ -98,8 +98,6 @@ ga('send', 'pageview');</script><meta name="google-site-verification" content="U
 <p>然后我开始寻找写 Markdown 的工具，就又发现了一个神器：<a target="_blank" rel="noopener" href="https://typora.io/">Typora</a>。常规的 Markdown 编辑器一般是分两个屏，左边是 Markdown 源码，右边是渲染后的界面，或者干脆只能写源代码，要用浏览器打开才能看到渲染后的样子。而 Typora 与众不同的地方在于：当我写下 Markdown 源码时，显示出来的直接就是渲染后的页面，所写即所见，干净利落。</p>
 <p>为了实现永不丢失的目的，我采取了一种多地备份策略：先在 GitHub 上建立一个笔记仓库，clone 到本地，然后在本地的仓库中记笔记，再定期 push 到远端。当时的我，每次都隔一段时间手动 push，然后还手动上传到 Google Drive 和 OneDrive，当时的我连写脚本自动上传都不会（菜+懒）。这个策略持续了一段时间。</p>
 <h3 id="Notion-时期"><a href="#Notion-时期" class="headerlink" title="Notion 时期"></a>Notion 时期</h3><p>后来，我买了一台 MacBook，一次偶然的机会在 <a target="_blank" rel="noopener" href="https://sspai.com/">少数派</a> 上看到了关于 <a target="_blank" rel="noopener" href="https://www.notion.so/">Notion</a> 的推荐，于是我就去尝试了这个软件，发现很有特色！贴近原生的 Markdown 语法，基于“方块”的新颖编辑模式，还有其他功能，例如嵌入视频、ToDo 列表，Database 等，也都非常好用。最重点的是，学生凭借 edu 邮箱可以免费使用 professional 版本，真的十分良心。于是我把所有的笔记迁移到了 Notion。</p>
-<img src="https://birdkyle7918.oss-cn-hongkong.aliyuncs.com/img/Notion.png"/>
-
 <p>然而，在与 Notion 度过了一段“蜜月期”之后，我逐渐发现了 Notion 的缺点：它是<strong>完全基于 Web 的</strong>，也就是我所写的东西，全部被上传至云端，并没有本地保存一份，当我查看时，需要请求服务器获取页面。虽然这样方便了个人跨平台访问内容以及多人跨平台协作，但是也造成了问题：如果某篇笔记内容偏多，打开时就会加载很长时间，这个体验确实不太舒服。后来我又了解到，Notion 开发团队目前还在成长阶段中，而且服务器也时不时发生故障，造成很多人无法打开笔记，以及丢失笔记更新等诸多问题，具体见 <a target="_blank" rel="noopener" href="https://twitter.com/NotionHQ">Notion 官方推特</a>。我不否认 Notion 是个很棒的产品，但由于我用不上 Notion 关于多人协作的功能（也许这才是精髓），发挥不了它的全部实力，再加上上述缺点，我最终还是放弃了它。</p>
 <h3 id="继续试错以及目前方案"><a href="#继续试错以及目前方案" class="headerlink" title="继续试错以及目前方案"></a>继续试错以及目前方案</h3><p>再之后，我又尝试了几个其他的笔记应用，如 <a target="_blank" rel="noopener" href="https://yinxiang.com/">印象笔记</a> 和 <a target="_blank" rel="noopener" href="https://logseq.com/">logseq</a>，都没有达到我的预期，兜兜转转，我又回到了 Typora。后来我学习了 <a href="github.com/rclone/rclone">rclone</a> 这个命令行工具，它让我很方便地将本地内容与云端同步，于是我制定了一个更好的策略：在本地写 Markdown 笔记，然后编写脚本，每隔 2 小时，就自动使用 rclone 将笔记上传至 Google Drive 和 OneDrive，当然，我的 iCloud 是自动上传的。这样，不需要我手动操作，就轻松达到了多地备份的目的。这个策略是我直到目前还在使用的，算是一个简单又能满足我需求的方案。如果我之后想到或发现了更好的策略，也许我还会有所改变。</p>
 <p>看到这篇文章的朋友，如果你也有记笔记的习惯，欢迎所有交流。关于 rclone 的使用可以参考我的另一篇文章：「<a href="https://birdkyle7918.com/2021/03/08/rclone-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">rclone 使用说明</a>」</p>
@@ -114,8 +112,6 @@ ga('send', 'pageview');</script><meta name="google-site-verification" content="U
 <li><p>选择一个项目 (project) 或新建一个项目；</p>
 </li>
 <li><p>在上方的 API 搜索框中键入 Google Drive 然后回车，找到搜索结果中的 Google Drive API：</p>
- <img src="https://i.v2ex.co/Q0GZQevT.png" style="zoom:60%;box-shadow: 3px 3px 10px 10px rgba(0,0,0,.15)" />
-
 <p> 进入后，点击启用；</p>
 </li>
 <li><p>如果此前没有配置过“同意屏幕”，那么点击左侧菜单中的“配置同意屏幕”，选择目标用户类型为<strong>外部</strong>，应用名称可以填入“rclone”，然后填入自己的邮箱，gmail 即可，点击保存创建，最后在创建好的同意屏幕中，把“发布状态”从“测试”切换为“<strong>发布</strong>”；</p>
